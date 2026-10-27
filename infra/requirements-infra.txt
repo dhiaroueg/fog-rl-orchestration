@@ -1,0 +1,6 @@
+fastapi==0.143.1
+httpx==0.28.1
+prometheus_client==0.26.0
+pytest==9.1.1
+PyYAML==6.0.3
+uvicorn==0.54.0
