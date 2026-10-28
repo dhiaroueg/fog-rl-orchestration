@@ -1,0 +1,4 @@
+# Dependances de l'image des noeuds (worker)
+fastapi==0.143.1
+prometheus_client==0.26.0
+uvicorn==0.54.0
