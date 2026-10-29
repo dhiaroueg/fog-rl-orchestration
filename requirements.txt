@@ -15,6 +15,7 @@ packaging==26.3
 pandas==3.0.6
 pillow==12.3.0
 protobuf==7.36.2
+PyYAML==6.0.3
 python-dateutil==2.9.0.post0
 sb3_contrib==2.9.0
 setuptools==84.0.0
