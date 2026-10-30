@@ -1,0 +1,40 @@
+# Genere par infra/gen_compose.py depuis experiments/configs/profiles.yaml : ne pas modifier a la main.
+services:
+  fogA:
+    image: fog-worker
+    container_name: fogA
+    init: true
+    cpus: 0.5
+    mem_limit: 256m
+    cap_add:
+    - NET_ADMIN
+    environment:
+      NODE_NAME: fogA
+      CONCURRENCY: '1'
+      SPEED_FACTOR: '1.0'
+      P_IDLE: '2.7'
+      P_MAX: '6.4'
+      BATTERY: 'true'
+      NETEM_DELAY_MS: '5'
+      NETEM_JITTER_MS: '1'
+    ports:
+    - 8001:8000
+  fogB:
+    image: fog-worker
+    container_name: fogB
+    init: true
+    cpus: 1.0
+    mem_limit: 512m
+    cap_add:
+    - NET_ADMIN
+    environment:
+      NODE_NAME: fogB
+      CONCURRENCY: '1'
+      SPEED_FACTOR: '1.0'
+      P_IDLE: '5'
+      P_MAX: '15'
+      BATTERY: 'true'
+      NETEM_DELAY_MS: '10'
+      NETEM_JITTER_MS: '2'
+    ports:
+    - 8002:8000

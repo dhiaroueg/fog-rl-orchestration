@@ -1,0 +1,7 @@
+# Windows et Linux peuvent enregistrer les fins de ligne des fichiers texte différemment.
+# - Windows utilise souvent CRLF.
+# - Linux utilise généralement LF.
+# *.sh : cible les fichiers dont le nom se termine par .sh.
+# text : indique à Git qu'il s'agit de fichiers texte.
+# eol=lf : demande à Git d'utiliser des fins de ligne LF dans le dépôt et lors de l'extraction des fichiers.
+*.sh text eol=lf
