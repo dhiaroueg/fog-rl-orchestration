@@ -1,0 +1,98 @@
+
+# Profils provisoires des noeuds Fog et Cloud
+# Les valeurs seront validees avec P1 et P3.
+# ############
+# ce fichier sert de "carte d'identité" et de plan d'organisation pour votre 
+# infrastructure de test. Il définit comment les ressources informatiques 
+# (processeurs, mémoire) sont partagées entre vos machines virtuelles, et 
+# comment chaque nœud de calcul (Fog et Cloud) se comporte.
+##############
+    # reserved_cpus / reserved_mem_mb : Une portion de sécurité 
+    # réservée pour que le sys d'expl de la VM fonctionne sans saturer.
+
+vms:
+  vm1:
+    vcpus: 3
+    ram_mb: 6144
+    reserved_cpus: 0.5
+    reserved_mem_mb: 1024
+
+
+  vm2:
+    vcpus: 4
+    ram_mb: 6144
+    reserved_cpus: 0.5
+    reserved_mem_mb: 1024
+
+  vm3:
+    vcpus: 4
+    ram_mb: 8192
+    reserved_cpus: 0.5
+    reserved_mem_mb: 1024
+
+request_types:
+# définit la complexité des tâches envoyées au système
+  light:
+    work_ms: 5
+    deadline_ms: 100
+    # tâche rapide (5 millisecondes de calcul) qui doit 
+    # impérativement répondre en moins de 100 ms.
+
+  medium:
+    work_ms: 40
+    deadline_ms: 300
+
+  heavy:
+    work_ms: 150
+    deadline_ms: 1000
+
+nodes:
+  fogA:
+    vm: vm1
+    cpus: 0.5 #cpus et memLa puissance et la mémoire allouées spécifiquement à ce conteneur.
+    mem_mb: 256
+    concurrency: 1 # nbre de req a traitzer en // par ce noeud
+    speed: 1.0
+    # simulation du reseau avec un retard de 5 ms et bruit de debit de 1 
+    netem_delay_ms: 5 #lag du reseau netem artificiel
+    netem_jitter_ms: 1 
+    p_idle: 2.7 #consommation denergie au repos 
+    # énergie consommée par le nœud qd il est allumé et prêt à recevoir des tâches,mais il ne fait rien (0%charge).
+    p_max: 6.4 #consommation denergie maximale (100%charge)
+    battery: true
+    # battery : true = sur batterie (attention à l'énergie) | false = sur prise secteur
+
+  fogB:
+    vm: vm1
+    cpus: 1.0
+    mem_mb: 512
+    concurrency: 1
+    speed: 1.0
+    netem_delay_ms: 10
+    netem_jitter_ms: 2
+    p_idle: 5
+    p_max: 15
+    battery: true
+
+  fogC:
+    vm: vm2
+    cpus: 2.0
+    mem_mb: 1024
+    concurrency: 2
+    speed: 1.5
+    netem_delay_ms: 20
+    netem_jitter_ms: 3
+    p_idle: 10
+    p_max: 35
+    battery: false
+
+  cloud:
+    vm: vm3
+    cpus: 3.0
+    mem_mb: 2048
+    concurrency: 4
+    speed: 2.0
+    netem_delay_ms: 80
+    netem_jitter_ms: 10
+    cost_per_req: null
+    battery: false
