@@ -1,4 +1,4 @@
-# Genere par infra/gen_compose.py depuis experiments/configs/profiles.yaml : ne pas modifier a la main.
+# Genere par infra/gen_compose.py depuis experiments\configs\profiles.yaml : ne pas modifier a la main.
 services:
   fogA:
     image: fog-worker

@@ -15,10 +15,12 @@ Important :
 """
 
 from __future__ import annotations
+from typing import Any, Mapping
+
 import numpy as np
 from .base import Policy
 
-
+# fournit cette méthode dans la classe GreedyPolicy : c’est là que se trouve le calcul greedy.
 class GreedyPolicy(Policy):
     name = "Greedy"
 
@@ -43,3 +45,32 @@ class GreedyPolicy(Policy):
         finish_fast = queue_fast + work / self.speeds[0]
         finish_slow = queue_slow + work / self.speeds[1]
         return 0 if finish_fast <= finish_slow else 1
+
+    def rank_workers(
+        self,
+        request: Mapping[str, Any],
+        states: Mapping[str, Mapping[str, Any]],
+        workers: Mapping[str, Any],
+    ) -> list[str]:
+        """Classe les workers réels selon leur temps de fin estimé.
+
+        Cette méthode partage le contrat de l'orchestrateur, tout en gardant
+        ``select`` compatible avec l'environnement jouet à deux nœuds.
+        """
+        work_ms = float(request["work_ms"])
+        if work_ms < 0:
+            raise ValueError("work_ms ne peut pas être négatif")
+
+        candidates: list[tuple[float, str]] = []
+        for name, state in states.items():
+            node = workers[name]
+            if state.get("depleted", False):
+                continue
+            if int(state.get("waiting", 0)) >= int(state.get("max_queue", 0)):
+                continue
+            queue_ms = float(state.get("queue_ms", 0.0))
+            estimated_service_ms = work_ms / float(node.speed_factor)
+            candidates.append((queue_ms + estimated_service_ms, name))
+
+        candidates.sort()
+        return [name for _, name in candidates]

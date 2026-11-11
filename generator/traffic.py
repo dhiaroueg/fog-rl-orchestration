@@ -44,6 +44,11 @@ def generate_arrivals(cfg: TrafficConfig, seed: int) -> pd.DataFrame:
     mu = np.log(means) - sigma ** 2 / 2.0
     work = rng_work.lognormal(mu, sigma)
 
+    # Le worker reçoit type + size et calcule son travail comme
+    # WORK_MS[type] * size / SPEED_FACTOR. Utiliser la moyenne de référence
+    # du type permet de représenter le work_ms tiré par le générateur.
+    size = work / means
+
     deadlines = np.array([cfg.types[k].deadline_ms for k in names])[type_idx]
 
     # 3. D'OÙ : zone d'origine
@@ -54,6 +59,7 @@ def generate_arrivals(cfg: TrafficConfig, seed: int) -> pd.DataFrame:
         "t_arrival_ms": t,
         "type": np.array(names)[type_idx],
         "work_ms": work,
+        "size": size,
         "deadline_ms": deadlines,
         "zone": np.array(ZONES)[zone_idx],
     })
