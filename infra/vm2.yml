@@ -1,0 +1,21 @@
+# Genere par infra/gen_compose.py depuis experiments/configs/profiles.yaml : ne pas modifier a la main.
+services:
+  fogC:
+    image: fog-worker
+    container_name: fogC
+    init: true
+    cpus: 2.0
+    mem_limit: 1024m
+    cap_add:
+    - NET_ADMIN
+    environment:
+      NODE_NAME: fogC
+      CONCURRENCY: '2'
+      SPEED_FACTOR: '1.5'
+      P_IDLE: '10'
+      P_MAX: '35'
+      BATTERY: 'false'
+      NETEM_DELAY_MS: '20'
+      NETEM_JITTER_MS: '3'
+    ports:
+    - 8003:8000
