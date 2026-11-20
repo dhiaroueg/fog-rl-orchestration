@@ -24,9 +24,9 @@ def load_workers() -> dict[str, WorkerNode]:
     les adresses réellement joignables depuis la machine de l'orchestrateur.
     """
     defaults = {
-        "fogA": "http://127.0.0.1:8001",
-        "fogB": "http://127.0.0.1:8002",
-        "fogC": "http://127.0.0.1:8003",
+        "fogA": "http://100.83.84.3:8001",
+        "fogB": "http://100.83.84.3:8002",
+        "fogC": "http://100.120.160.68:8003",
         "cloud": "http://127.0.0.1:8004",
     }
     env_names = {"fogA": "FOGA_URL", "fogB": "FOGB_URL", "fogC": "FOGC_URL", "cloud": "CLOUD_URL"}

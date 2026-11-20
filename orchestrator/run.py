@@ -9,6 +9,7 @@ from pathlib import Path
 
 import yaml
 
+from infra.measure_service import write_run_measurements
 from generator.schema import TrafficConfig
 from generator.traffic import generate_arrivals
 
@@ -74,17 +75,40 @@ async def run(args: argparse.Namespace) -> None:
     finally:
         await client.aclose()
 
-    output = Path(args.output)
+    output = (
+        Path(args.output)
+        if args.output
+        else Path("results") / f"orchestration_{config.scenario}.jsonl"
+    )
     output.parent.mkdir(parents=True, exist_ok=True)
     with output.open("w", encoding="utf-8") as output_file:
         for result in results:
-            output_file.write(json.dumps(result, ensure_ascii=False) + "\n")
+            output_file.write(
+                json.dumps(
+                    {**result, "scenario": config.scenario},
+                    ensure_ascii=False,
+                )
+                + "\n"
+            )
+
+    measurement_stem = output.stem
+    scenario_suffix = f"_{config.scenario}"
+    if not measurement_stem.endswith(scenario_suffix):
+        measurement_stem += scenario_suffix
+    measurements_output = output.with_name(f"{measurement_stem}_measurements.csv")
+    write_run_measurements(
+        results,
+        arrivals,
+        measurements_output,
+        scenario=config.scenario,
+    )
 
     completed = [result for result in results if result["status"] == "completed"]
     met = sum(bool(result["deadline_met"]) for result in completed)
     print(f"Requêtes: {len(results)} | terminées: {len(completed)} | échecs: {len(results) - len(completed)}")
     print(f"Deadlines respectées: {met}/{len(completed)} requêtes terminées")
     print(f"Résultats JSONL: {output.resolve()}")
+    print(f"Mesures des nœuds Fog: {measurements_output.resolve()}")
 
 
 def main() -> None:
@@ -128,7 +152,10 @@ def main() -> None:
     )
     parser.add_argument("--trace-interval-ms", type=float)
     parser.add_argument("--timeout", type=float, default=5.0)
-    parser.add_argument("--output", default="results/orchestration.jsonl")
+    parser.add_argument(
+        "--output",
+        help="Fichier JSONL de sortie (par défaut : results/orchestration_<scenario>.jsonl)",
+    )
     args = parser.parse_args()
     if args.requests is not None and args.requests < 1:
         parser.error("--requests doit être >= 1")

@@ -16,9 +16,9 @@ class TypeSpec:
 
 DEFAULT_TYPES = {
     # share part dans la requete
-    "light":  TypeSpec(mean_work_ms=5,   deadline_ms=100,  share=0.6),
-    "medium": TypeSpec(mean_work_ms=40,  deadline_ms=300,  share=0.3),
-    "heavy":  TypeSpec(mean_work_ms=150, deadline_ms=1000, share=0.1),
+    "light":  TypeSpec(mean_work_ms=5,   deadline_ms=3000,  share=0.6),
+    "medium": TypeSpec(mean_work_ms=40,  deadline_ms=8000,  share=0.3),
+    "heavy":  TypeSpec(mean_work_ms=150, deadline_ms=20000, share=0.1),
 }
 
 

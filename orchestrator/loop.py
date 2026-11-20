@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import asyncio
 import time
+from datetime import datetime, timezone
 from typing import Any, Iterable, Mapping
 
 from state_spec import NodeState, RequestState, encode_state
@@ -45,6 +46,7 @@ async def dispatch_request(
     request_started = time.perf_counter()
     # Démarre le chronométrage et récupère l’état des workers avec GET /state.
     states, state_errors = await _collect_states(client, workers)
+    observed_at = datetime.now(timezone.utc).isoformat(timespec="milliseconds")
     ordered_states = []
     for name in workers:
         state = states.get(name, {})
@@ -75,6 +77,7 @@ async def dispatch_request(
             "error": str(exc),
             "state_errors": state_errors,
             "observed_states": states,
+            "observed_at": observed_at,
         }
 
     decision_started = time.perf_counter()
@@ -114,6 +117,7 @@ async def dispatch_request(
             "status": "no_worker_available",
             "state_errors": state_errors,
             "observed_states": states,
+            "observed_at": observed_at,
             "observation": observation.tolist(),
             "action_mask": action_mask.tolist(),
             "decision_ms": round(decision_ms, 3),
@@ -142,6 +146,7 @@ async def dispatch_request(
             "status": "completed",
             "selected_node": name,
             "observed_states": states,
+            "observed_at": observed_at,
             "worker_result": result,
             "elapsed_ms": round(elapsed_ms, 3),
             "decision_ms": round(decision_ms, 3),
@@ -159,6 +164,7 @@ async def dispatch_request(
         "dispatch_failures": failures,
         "state_errors": state_errors,
         "observed_states": states,
+        "observed_at": observed_at,
         "observation": observation.tolist(),
         "action_mask": action_mask.tolist(),
         "decision_ms": round(decision_ms, 3),

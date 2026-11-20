@@ -1,0 +1,601 @@
+scenario,timestamp,request_id,simulated_arrival_ms,node,request_type,request_status,node_status,dispatch_status,queue_ms,cpu_pct,net_rtt_ms,battery_fraction,depleted,in_flight,waiting,worker_wait_ms,service_time_ms,elapsed_ms,deadline_ms,deadline_met,error
+constant,2026-11-20T22:04:55.437+00:00,r-000000,28.955020465473748,fogA,light,completed,available,selected,0.0,0.0,149.55809999992198,1.0,False,0,0,197.83,57.09,13436.367,3000,False,
+constant,2026-11-20T22:04:55.437+00:00,r-000000,28.955020465473748,fogB,light,completed,available,not_selected,0.0,0.0,99.9273000015819,1.0,False,0,0,,,13436.367,3000,False,
+constant,2026-11-20T22:04:55.437+00:00,r-000000,28.955020465473748,fogC,light,completed,available,failed,0.0,0.0,274.5743000014045,1.0,False,0,0,,,13436.367,3000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:55.446+00:00,r-000001,31.00977182968697,fogA,medium,completed,available,selected,0.0,0.0,104.86659999878611,1.0,False,0,0,0.01,74.71,13196.495,8000,False,
+constant,2026-11-20T22:04:55.446+00:00,r-000001,31.00977182968697,fogB,medium,completed,available,not_selected,0.0,0.0,98.0822999990778,1.0,False,0,0,,,13196.495,8000,False,
+constant,2026-11-20T22:04:55.446+00:00,r-000001,31.00977182968697,fogC,medium,completed,available,failed,0.0,0.0,315.92730000011215,1.0,False,0,0,,,13196.495,8000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:55.454+00:00,r-000002,56.260766618469475,fogA,light,completed,available,selected,0.0,0.0,158.25200000108453,1.0,False,0,0,100.98,91.88,13309.429,3000,False,
+constant,2026-11-20T22:04:55.454+00:00,r-000002,56.260766618469475,fogB,light,completed,available,not_selected,0.0,0.0,98.96670000125596,1.0,False,0,0,,,13309.429,3000,False,
+constant,2026-11-20T22:04:55.454+00:00,r-000002,56.260766618469475,fogC,light,completed,available,failed,0.0,0.0,293.5080999995989,1.0,False,0,0,,,13309.429,3000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:55.466+00:00,r-000003,73.95138765124253,fogA,light,completed,available,selected,0.0,0.0,117.73519999951532,1.0,False,0,0,303.14,83.19,13501.767,3000,False,
+constant,2026-11-20T22:04:55.466+00:00,r-000003,73.95138765124253,fogB,light,completed,available,not_selected,0.0,0.0,88.5110999988683,1.0,False,0,0,,,13501.767,3000,False,
+constant,2026-11-20T22:04:55.466+00:00,r-000003,73.95138765124253,fogC,light,completed,available,failed,0.0,0.0,418.7502000004315,1.0,False,0,0,,,13501.767,3000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:55.473+00:00,r-000004,98.67864523676766,fogA,light,completed,available,selected,0.0,0.0,189.34400000034657,1.0,False,0,0,264.73,35.15,13420.567,3000,False,
+constant,2026-11-20T22:04:55.473+00:00,r-000004,98.67864523676766,fogB,light,completed,available,not_selected,0.0,0.0,103.61360000024433,1.0,False,0,0,,,13420.567,3000,False,
+constant,2026-11-20T22:04:55.473+00:00,r-000004,98.67864523676766,fogC,light,completed,available,failed,0.0,0.0,415.6053000006068,1.0,False,0,0,,,13420.567,3000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:55.481+00:00,r-000005,133.034556462507,fogA,light,completed,available,selected,0.0,0.0,189.91800000003423,1.0,False,0,0,79.86,13.96,13175.495,3000,False,
+constant,2026-11-20T22:04:55.481+00:00,r-000005,133.034556462507,fogB,light,completed,available,not_selected,0.0,0.0,165.81799999948998,1.0,False,0,0,,,13175.495,3000,False,
+constant,2026-11-20T22:04:55.481+00:00,r-000005,133.034556462507,fogC,light,completed,available,failed,0.0,0.0,423.05859999942186,1.0,False,0,0,,,13175.495,3000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:55.488+00:00,r-000006,169.65230147973045,fogA,heavy,completed,available,selected,0.0,0.0,186.45780000042578,1.0,False,0,0,1001.11,413.55,14468.637,20000,True,
+constant,2026-11-20T22:04:55.488+00:00,r-000006,169.65230147973045,fogB,heavy,completed,available,not_selected,0.0,0.0,197.04830000046059,1.0,False,0,0,,,14468.637,20000,True,
+constant,2026-11-20T22:04:55.488+00:00,r-000006,169.65230147973045,fogC,heavy,completed,available,failed,0.0,0.0,447.23329999942507,1.0,False,0,0,,,14468.637,20000,True,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:55.497+00:00,r-000007,171.886652365136,fogA,light,completed,available,selected,0.0,0.0,193.45570000041334,1.0,False,0,0,463.05,97.89,13613.367,3000,False,
+constant,2026-11-20T22:04:55.497+00:00,r-000007,171.886652365136,fogB,light,completed,available,not_selected,0.0,0.0,177.80370000036783,1.0,False,0,0,,,13613.367,3000,False,
+constant,2026-11-20T22:04:55.497+00:00,r-000007,171.886652365136,fogC,light,completed,available,failed,0.0,0.0,438.8079000000289,1.0,False,0,0,,,13613.367,3000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:55.504+00:00,r-000008,182.83325740063196,fogA,heavy,completed,available,selected,0.0,0.0,189.3039000005956,1.0,False,0,0,564.35,435.62,14046.766,20000,True,
+constant,2026-11-20T22:04:55.504+00:00,r-000008,182.83325740063196,fogB,heavy,completed,available,not_selected,0.0,0.0,185.43870000030438,1.0,False,0,0,,,14046.766,20000,True,
+constant,2026-11-20T22:04:55.504+00:00,r-000008,182.83325740063196,fogC,heavy,completed,available,failed,0.0,0.0,431.66939999900933,1.0,False,0,0,,,14046.766,20000,True,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:55.511+00:00,r-000009,203.28479407164207,fogA,light,completed,available,selected,0.0,0.0,156.87660000003234,1.0,False,0,0,1446.86,11.8,14473.876,3000,False,
+constant,2026-11-20T22:04:55.511+00:00,r-000009,203.28479407164207,fogB,light,completed,available,not_selected,0.0,0.0,159.5130000005156,1.0,False,0,0,,,14473.876,3000,False,
+constant,2026-11-20T22:04:55.511+00:00,r-000009,203.28479407164207,fogC,light,completed,available,failed,0.0,0.0,482.07929999989574,1.0,False,0,0,,,14473.876,3000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:55.518+00:00,r-000010,211.58767410689393,fogA,medium,completed,available,selected,0.0,0.0,186.0703000002104,1.0,False,0,0,1468.62,128.21,14589.615,8000,False,
+constant,2026-11-20T22:04:55.518+00:00,r-000010,211.58767410689393,fogB,medium,completed,available,not_selected,0.0,0.0,191.12959999984014,1.0,False,0,0,,,14589.615,8000,False,
+constant,2026-11-20T22:04:55.518+00:00,r-000010,211.58767410689393,fogC,medium,completed,available,failed,0.0,0.0,466.7437999996764,1.0,False,0,0,,,14589.615,8000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:55.529+00:00,r-000011,215.26994203509258,fogA,light,completed,available,selected,0.0,0.0,184.04889999874285,1.0,False,0,0,1605.25,20.2,14634.42,3000,False,
+constant,2026-11-20T22:04:55.529+00:00,r-000011,215.26994203509258,fogB,light,completed,available,not_selected,0.0,0.0,218.05489999860583,1.0,False,0,0,,,14634.42,3000,False,
+constant,2026-11-20T22:04:55.529+00:00,r-000011,215.26994203509258,fogC,light,completed,available,failed,0.0,0.0,550.6738000003679,1.0,False,0,0,,,14634.42,3000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:55.537+00:00,r-000012,219.01224160666624,fogA,light,completed,available,selected,0.0,0.0,175.16750000140746,1.0,False,0,0,1641.73,26.7,14656.885,3000,False,
+constant,2026-11-20T22:04:55.537+00:00,r-000012,219.01224160666624,fogB,light,completed,available,not_selected,0.0,0.0,231.48399999990943,1.0,False,0,0,,,14656.885,3000,False,
+constant,2026-11-20T22:04:55.537+00:00,r-000012,219.01224160666624,fogC,light,completed,available,failed,0.0,0.0,548.4718000006978,1.0,False,0,0,,,14656.885,3000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:55.545+00:00,r-000013,249.14268438321662,fogA,heavy,completed,available,selected,0.0,0.0,167.85650000019814,1.0,False,0,0,1670.49,399.79,15023.006,20000,True,
+constant,2026-11-20T22:04:55.545+00:00,r-000013,249.14268438321662,fogB,heavy,completed,available,not_selected,0.0,0.0,220.00939999998081,1.0,False,0,0,,,15023.006,20000,True,
+constant,2026-11-20T22:04:55.545+00:00,r-000013,249.14268438321662,fogC,heavy,completed,available,failed,0.0,0.0,554.4883000002301,1.0,False,0,0,,,15023.006,20000,True,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:55.552+00:00,r-000014,249.56222038968588,fogA,medium,completed,available,selected,0.0,0.0,173.19820000011532,1.0,False,0,0,2079.4,105.96,15134.734,8000,False,
+constant,2026-11-20T22:04:55.552+00:00,r-000014,249.56222038968588,fogB,medium,completed,available,not_selected,0.0,0.0,202.70039999923029,1.0,False,0,0,,,15134.734,8000,False,
+constant,2026-11-20T22:04:55.552+00:00,r-000014,249.56222038968588,fogC,medium,completed,available,failed,0.0,0.0,592.0382000003883,1.0,False,0,0,,,15134.734,8000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:55.619+00:00,r-000015,267.65886584479176,fogA,light,completed,available,selected,0.0,0.0,149.9238999986119,1.0,False,0,0,1406.25,33.11,14376.638,3000,False,
+constant,2026-11-20T22:04:55.619+00:00,r-000015,267.65886584479176,fogB,light,completed,available,not_selected,0.0,0.0,236.66170000069542,1.0,False,0,0,,,14376.638,3000,False,
+constant,2026-11-20T22:04:55.619+00:00,r-000015,267.65886584479176,fogC,light,completed,available,failed,0.0,0.0,553.7844999998924,1.0,False,0,0,,,14376.638,3000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:56.959+00:00,r-000016,288.85157252336364,fogA,medium,completed,available,selected,0.0,0.0,203.95149999967543,1.0,False,0,0,2188.08,120.79,15232.376,8000,False,
+constant,2026-11-20T22:04:56.959+00:00,r-000016,288.85157252336364,fogB,medium,completed,available,not_selected,0.0,0.0,246.6698999996879,1.0,False,0,0,,,15232.376,8000,False,
+constant,2026-11-20T22:04:56.959+00:00,r-000016,288.85157252336364,fogC,medium,completed,available,failed,0.0,0.0,525.6044999987353,1.0,False,0,0,,,15232.376,8000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:56.970+00:00,r-000017,290.7120050844617,fogA,heavy,completed,available,selected,0.0,0.0,201.29850000012084,1.0,False,0,0,2310.49,150.87,15390.581,20000,True,
+constant,2026-11-20T22:04:56.970+00:00,r-000017,290.7120050844617,fogB,heavy,completed,available,not_selected,0.0,0.0,251.06530000084604,1.0,False,0,0,,,15390.581,20000,True,
+constant,2026-11-20T22:04:56.970+00:00,r-000017,290.7120050844617,fogC,heavy,completed,available,failed,0.0,0.0,566.3441000015155,1.0,False,0,0,,,15390.581,20000,True,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:56.984+00:00,r-000018,293.33485664476694,fogA,light,completed,available,selected,0.0,0.0,191.54679999883228,1.0,False,0,0,2462.81,15.69,15387.458,3000,False,
+constant,2026-11-20T22:04:56.984+00:00,r-000018,293.33485664476694,fogB,light,completed,available,not_selected,0.0,0.0,235.96349999934318,1.0,False,0,0,,,15387.458,3000,False,
+constant,2026-11-20T22:04:56.984+00:00,r-000018,293.33485664476694,fogC,light,completed,available,failed,0.0,0.0,537.0874000000185,1.0,False,0,0,,,15387.458,3000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:56.998+00:00,r-000019,299.3306722313465,fogA,medium,completed,available,selected,0.0,0.0,226.61200000038662,1.0,False,0,0,2482.86,91.52,15476.704,8000,False,
+constant,2026-11-20T22:04:56.998+00:00,r-000019,299.3306722313465,fogB,medium,completed,available,not_selected,0.0,0.0,243.08380000002217,1.0,False,0,0,,,15476.704,8000,False,
+constant,2026-11-20T22:04:56.998+00:00,r-000019,299.3306722313465,fogC,medium,completed,available,failed,0.0,0.0,548.8984000003256,1.0,False,0,0,,,15476.704,8000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:57.013+00:00,r-000020,327.6921204831632,fogA,light,completed,available,selected,0.0,0.0,207.27619999888702,1.0,False,0,0,2575.29,66.76,15562.588,3000,False,
+constant,2026-11-20T22:04:57.013+00:00,r-000020,327.6921204831632,fogB,light,completed,available,not_selected,0.0,0.0,216.4943999996467,1.0,False,0,0,,,15562.588,3000,False,
+constant,2026-11-20T22:04:57.013+00:00,r-000020,327.6921204831632,fogC,light,completed,available,failed,0.0,0.0,2023.0320999999094,1.0,False,0,0,,,15562.588,3000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:57.314+00:00,r-000021,398.7678834768112,fogA,heavy,completed,available,failed,0.0,0.0,204.86840000012307,1.0,False,0,0,,,13836.302,20000,True,"fogA (http://100.83.84.3:8001/process): HTTP 503: {""detail"":""file pleine ou batterie epuisee""}"
+constant,2026-11-20T22:04:57.314+00:00,r-000021,398.7678834768112,fogB,heavy,completed,available,selected,0.0,0.0,219.042000000627,1.0,False,0,0,0.01,130.51,13836.302,20000,True,
+constant,2026-11-20T22:04:57.314+00:00,r-000021,398.7678834768112,fogC,heavy,completed,available,failed,0.0,0.0,457.7423999999155,1.0,False,0,0,,,13836.302,20000,True,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:57.331+00:00,r-000022,415.8105122709193,fogA,heavy,completed,available,failed,0.0,0.0,208.10010000059265,1.0,False,0,0,,,13962.746,20000,True,"fogA (http://100.83.84.3:8001/process): HTTP 503: {""detail"":""file pleine ou batterie epuisee""}"
+constant,2026-11-20T22:04:57.331+00:00,r-000022,415.8105122709193,fogB,heavy,completed,available,selected,0.0,0.0,217.18220000002475,1.0,False,0,0,93.26,131.66,13962.746,20000,True,
+constant,2026-11-20T22:04:57.331+00:00,r-000022,415.8105122709193,fogC,heavy,completed,available,failed,0.0,0.0,624.0514000000985,1.0,False,0,0,,,13962.746,20000,True,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:57.346+00:00,r-000023,429.3656068734822,fogA,medium,completed,available,failed,0.0,0.0,196.73839999995835,1.0,False,0,0,,,14014.744,8000,False,"fogA (http://100.83.84.3:8001/process): HTTP 503: {""detail"":""file pleine ou batterie epuisee""}"
+constant,2026-11-20T22:04:57.346+00:00,r-000023,429.3656068734822,fogB,medium,completed,available,selected,0.0,0.0,242.01240000002144,1.0,False,0,0,212.96,66.24,14014.744,8000,False,
+constant,2026-11-20T22:04:57.346+00:00,r-000023,429.3656068734822,fogC,medium,completed,available,failed,0.0,0.0,1926.669899999979,1.0,False,0,0,,,14014.744,8000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:57.356+00:00,r-000024,481.0159013843916,fogA,heavy,completed,available,selected,0.0,0.0,239.43489999874146,1.0,False,0,0,2484.3,452.88,15850.426,20000,True,
+constant,2026-11-20T22:04:57.356+00:00,r-000024,481.0159013843916,fogB,heavy,completed,available,not_selected,0.0,0.0,323.0509000004531,1.0,False,0,0,,,15850.426,20000,True,
+constant,2026-11-20T22:04:57.356+00:00,r-000024,481.0159013843916,fogC,heavy,completed,available,failed,0.0,0.0,673.4795000011218,1.0,False,0,0,,,15850.426,20000,True,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:57.365+00:00,r-000025,485.0373964839365,fogA,light,completed,available,failed,0.0,0.0,195.31049999932293,1.0,False,0,0,,,13981.316,3000,False,"fogA (http://100.83.84.3:8001/process): HTTP 503: {""detail"":""file pleine ou batterie epuisee""}"
+constant,2026-11-20T22:04:57.365+00:00,r-000025,485.0373964839365,fogB,light,completed,available,selected,0.0,0.0,309.4959000009112,1.0,False,0,0,190.85,15.91,13981.316,3000,False,
+constant,2026-11-20T22:04:57.365+00:00,r-000025,485.0373964839365,fogC,light,completed,available,failed,0.0,0.0,610.8910999992077,1.0,False,0,0,,,13981.316,3000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:57.380+00:00,r-000026,485.72037691612286,fogA,light,completed,available,selected,0.0,0.0,224.41239999898244,1.0,False,0,0,2939.13,35.12,15865.037,3000,False,
+constant,2026-11-20T22:04:57.380+00:00,r-000026,485.72037691612286,fogB,light,completed,available,not_selected,0.0,0.0,267.95750000019325,1.0,False,0,0,,,15865.037,3000,False,
+constant,2026-11-20T22:04:57.380+00:00,r-000026,485.72037691612286,fogC,light,completed,available,failed,0.0,0.0,697.8626000000077,1.0,False,0,0,,,15865.037,3000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:57.392+00:00,r-000027,504.0123008919429,fogA,heavy,completed,available,failed,0.0,0.0,258.9012999997067,1.0,False,0,0,,,14091.353,20000,True,"fogA (http://100.83.84.3:8001/process): HTTP 503: {""detail"":""file pleine ou batterie epuisee""}"
+constant,2026-11-20T22:04:57.392+00:00,r-000027,504.0123008919429,fogB,heavy,completed,available,selected,0.0,0.0,259.6357000002172,1.0,False,0,0,202.2,125.37,14091.353,20000,True,
+constant,2026-11-20T22:04:57.392+00:00,r-000027,504.0123008919429,fogC,heavy,completed,available,failed,0.0,0.0,733.2642000001215,1.0,False,0,0,,,14091.353,20000,True,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:57.403+00:00,r-000028,525.9456685018047,fogA,light,completed,available,failed,0.0,0.0,245.19429999963904,1.0,False,0,0,,,14088.619,3000,False,"fogA (http://100.83.84.3:8001/process): HTTP 503: {""detail"":""file pleine ou batterie epuisee""}"
+constant,2026-11-20T22:04:57.403+00:00,r-000028,525.9456685018047,fogB,light,completed,available,selected,0.0,0.0,278.51449999980105,1.0,False,0,0,282.57,7.02,14088.619,3000,False,
+constant,2026-11-20T22:04:57.403+00:00,r-000028,525.9456685018047,fogC,light,completed,available,failed,0.0,0.0,887.7322000007553,1.0,False,0,0,,,14088.619,3000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:59.353+00:00,r-000029,525.9465348423078,fogA,heavy,completed,available,failed,0.0,0.0,240.6847000002017,1.0,False,0,0,,,14281.264,20000,True,"fogA (http://100.83.84.3:8001/process): HTTP 503: {""detail"":""file pleine ou batterie epuisee""}"
+constant,2026-11-20T22:04:59.353+00:00,r-000029,525.9465348423078,fogB,heavy,completed,available,selected,0.0,0.0,271.6805000000022,1.0,False,0,0,253.17,185.38,14281.264,20000,True,
+constant,2026-11-20T22:04:59.353+00:00,r-000029,525.9465348423078,fogC,heavy,completed,available,failed,0.0,0.0,731.081500000073,1.0,False,0,0,,,14281.264,20000,True,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:59.374+00:00,r-000030,531.5748573801608,fogA,light,completed,available,selected,0.0,0.0,253.49029999961203,1.0,False,0,0,2869.21,7.82,15824.662,3000,False,
+constant,2026-11-20T22:04:59.374+00:00,r-000030,531.5748573801608,fogB,light,completed,available,not_selected,0.0,0.0,289.49240000110876,1.0,False,0,0,,,15824.662,3000,False,
+constant,2026-11-20T22:04:59.374+00:00,r-000030,531.5748573801608,fogC,light,completed,available,failed,0.0,0.0,791.269999999713,1.0,False,0,0,,,15824.662,3000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:59.394+00:00,r-000031,535.5648816711843,fogA,light,completed,available,selected,0.0,0.0,306.33789999956207,1.0,False,0,0,2880.09,9.22,15821.51,3000,False,
+constant,2026-11-20T22:04:59.394+00:00,r-000031,535.5648816711843,fogB,light,completed,available,not_selected,0.0,0.0,321.1540000011155,1.0,False,0,0,,,15821.51,3000,False,
+constant,2026-11-20T22:04:59.394+00:00,r-000031,535.5648816711843,fogC,light,completed,available,failed,0.0,0.0,780.8015000009618,1.0,False,0,0,,,15821.51,3000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:59.410+00:00,r-000032,551.9274496949695,fogA,light,completed,available,failed,0.0,0.0,319.7971999998117,1.0,False,0,0,,,14243.736,3000,False,"fogA (http://100.83.84.3:8001/process): HTTP 503: {""detail"":""file pleine ou batterie epuisee""}"
+constant,2026-11-20T22:04:59.410+00:00,r-000032,551.9274496949695,fogB,light,completed,available,selected,0.0,0.0,322.5834999993822,1.0,False,0,0,436.7,5.88,14243.736,3000,False,
+constant,2026-11-20T22:04:59.410+00:00,r-000032,551.9274496949695,fogC,light,completed,available,failed,0.0,0.0,744.7191999999632,1.0,False,0,0,,,14243.736,3000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:59.433+00:00,r-000033,586.5732064360028,fogA,light,completed,available,failed,0.0,0.0,309.7672000003513,1.0,False,0,0,,,14298.468,3000,False,"fogA (http://100.83.84.3:8001/process): HTTP 503: {""detail"":""file pleine ou batterie epuisee""}"
+constant,2026-11-20T22:04:59.433+00:00,r-000033,586.5732064360028,fogB,light,completed,available,selected,0.0,0.0,327.5776999998925,1.0,False,0,0,410.87,9.79,14298.468,3000,False,
+constant,2026-11-20T22:04:59.433+00:00,r-000033,586.5732064360028,fogC,light,completed,available,failed,0.0,0.0,759.6333000001323,1.0,False,0,0,,,14298.468,3000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:59.457+00:00,r-000034,588.1721116470051,fogA,medium,completed,available,failed,0.0,0.0,322.85220000085246,1.0,False,0,0,,,14286.667,8000,False,"fogA (http://100.83.84.3:8001/process): HTTP 503: {""detail"":""file pleine ou batterie epuisee""}"
+constant,2026-11-20T22:04:59.457+00:00,r-000034,588.1721116470051,fogB,medium,completed,available,selected,0.0,0.0,321.2598000009166,1.0,False,0,0,355.94,57.65,14286.667,8000,False,
+constant,2026-11-20T22:04:59.457+00:00,r-000034,588.1721116470051,fogC,medium,completed,available,failed,0.0,0.0,658.1238000017038,1.0,False,0,0,,,14286.667,8000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:59.474+00:00,r-000035,592.4683324987582,fogA,heavy,completed,available,selected,0.0,0.0,314.4060000013269,1.0,False,0,0,2826.71,494.67,16309.826,20000,True,
+constant,2026-11-20T22:04:59.474+00:00,r-000035,592.4683324987582,fogB,heavy,completed,available,not_selected,0.0,0.0,301.7603999996936,1.0,False,0,0,,,16309.826,20000,True,
+constant,2026-11-20T22:04:59.474+00:00,r-000035,592.4683324987582,fogC,heavy,completed,available,failed,0.0,0.0,780.229900001359,1.0,False,0,0,,,16309.826,20000,True,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:59.491+00:00,r-000036,608.2576528440767,fogA,medium,completed,available,failed,0.0,0.0,303.99149999902875,1.0,False,0,0,,,14339.805,8000,False,"fogA (http://100.83.84.3:8001/process): HTTP 503: {""detail"":""file pleine ou batterie epuisee""}"
+constant,2026-11-20T22:04:59.491+00:00,r-000036,608.2576528440767,fogB,medium,completed,available,selected,0.0,0.0,303.1922999998642,1.0,False,0,0,417.27,58.08,14339.805,8000,False,
+constant,2026-11-20T22:04:59.491+00:00,r-000036,608.2576528440767,fogC,medium,completed,available,failed,0.0,0.0,730.1229000004241,1.0,False,0,0,,,14339.805,8000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:59.510+00:00,r-000037,644.8828240670315,fogA,heavy,completed,available,failed,0.0,0.0,300.8410000002186,1.0,False,0,0,,,14546.152,20000,True,"fogA (http://100.83.84.3:8001/process): HTTP 503: {""detail"":""file pleine ou batterie epuisee""}"
+constant,2026-11-20T22:04:59.510+00:00,r-000037,644.8828240670315,fogB,heavy,completed,available,selected,0.0,0.0,305.1821999997628,1.0,False,0,0,445.71,237.74,14546.152,20000,True,
+constant,2026-11-20T22:04:59.510+00:00,r-000037,644.8828240670315,fogC,heavy,completed,available,failed,0.0,0.0,813.3139000001393,1.0,False,0,0,,,14546.152,20000,True,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:59.531+00:00,r-000038,651.4545209819389,fogA,medium,completed,available,failed,0.0,0.0,299.0882000012789,1.0,False,0,0,,,14567.544,8000,False,"fogA (http://100.83.84.3:8001/process): HTTP 503: {""detail"":""file pleine ou batterie epuisee""}"
+constant,2026-11-20T22:04:59.531+00:00,r-000038,651.4545209819389,fogB,medium,completed,available,selected,0.0,0.0,294.0306000000419,1.0,False,0,0,648.97,36.04,14567.544,8000,False,
+constant,2026-11-20T22:04:59.531+00:00,r-000038,651.4545209819389,fogC,medium,completed,available,failed,0.0,0.0,743.8070000007428,1.0,False,0,0,,,14567.544,8000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:59.552+00:00,r-000039,664.8691920673664,fogA,light,completed,available,failed,0.0,0.0,288.71629999957804,1.0,False,0,0,,,14570.015,3000,False,"fogA (http://100.83.84.3:8001/process): HTTP 503: {""detail"":""file pleine ou batterie epuisee""}"
+constant,2026-11-20T22:04:59.552+00:00,r-000039,664.8691920673664,fogB,light,completed,available,selected,0.0,0.0,311.2266999996791,1.0,False,0,0,663.11,9.83,14570.015,3000,False,
+constant,2026-11-20T22:04:59.552+00:00,r-000039,664.8691920673664,fogC,light,completed,available,failed,0.0,0.0,743.862799999988,1.0,False,0,0,,,14570.015,3000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:59.575+00:00,r-000040,677.5596765874805,fogA,light,completed,available,failed,0.0,0.0,293.3361999985209,1.0,False,0,0,,,14588.443,3000,False,"fogA (http://100.83.84.3:8001/process): HTTP 503: {""detail"":""file pleine ou batterie epuisee""}"
+constant,2026-11-20T22:04:59.575+00:00,r-000040,677.5596765874805,fogB,light,completed,available,selected,0.0,0.0,291.9539000013174,1.0,False,0,0,611.5,7.06,14588.443,3000,False,
+constant,2026-11-20T22:04:59.575+00:00,r-000040,677.5596765874805,fogC,light,completed,available,failed,0.0,0.0,784.444999999323,1.0,False,0,0,,,14588.443,3000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:59.610+00:00,r-000041,689.6900539156959,fogA,light,completed,available,failed,0.0,0.0,315.84139999904437,1.0,False,0,0,,,14612.739,3000,False,"fogA (http://100.83.84.3:8001/process): HTTP 503: {""detail"":""file pleine ou batterie epuisee""}"
+constant,2026-11-20T22:04:59.610+00:00,r-000041,689.6900539156959,fogB,light,completed,available,selected,0.0,0.0,315.6740999984322,1.0,False,0,0,637.46,21.31,14612.739,3000,False,
+constant,2026-11-20T22:04:59.610+00:00,r-000041,689.6900539156959,fogC,light,completed,available,failed,0.0,0.0,922.340000000986,1.0,False,0,0,,,14612.739,3000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:59.590+00:00,r-000042,700.627877544217,fogA,medium,completed,available,failed,0.0,0.0,265.7686999991711,1.0,False,0,0,,,14540.735,8000,False,"fogA (http://100.83.84.3:8001/process): HTTP 503: {""detail"":""file pleine ou batterie epuisee""}"
+constant,2026-11-20T22:04:59.590+00:00,r-000042,700.627877544217,fogB,medium,completed,available,selected,0.0,0.0,263.4780000007595,1.0,False,0,0,602.53,41.72,14540.735,8000,False,
+constant,2026-11-20T22:04:59.590+00:00,r-000042,700.627877544217,fogC,medium,completed,available,failed,0.0,0.0,721.1822000008397,1.0,False,0,0,,,14540.735,8000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:59.624+00:00,r-000043,706.7323701732347,fogA,light,completed,available,failed,0.0,0.0,263.78810000096564,1.0,False,0,0,,,14613.349,3000,False,"fogA (http://100.83.84.3:8001/process): HTTP 503: {""detail"":""file pleine ou batterie epuisee""}"
+constant,2026-11-20T22:04:59.624+00:00,r-000043,706.7323701732347,fogB,light,completed,available,selected,0.0,0.0,262.32830000117247,1.0,False,0,0,644.3,10.58,14613.349,3000,False,
+constant,2026-11-20T22:04:59.624+00:00,r-000043,706.7323701732347,fogC,light,completed,available,failed,0.0,0.0,714.8068000005878,1.0,False,0,0,,,14613.349,3000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:59.639+00:00,r-000044,721.1856762269166,fogA,medium,completed,available,failed,0.0,0.0,257.3956000014732,1.0,False,0,0,,,14638.878,8000,False,"fogA (http://100.83.84.3:8001/process): HTTP 503: {""detail"":""file pleine ou batterie epuisee""}"
+constant,2026-11-20T22:04:59.639+00:00,r-000044,721.1856762269166,fogB,medium,completed,available,selected,0.0,0.0,289.0545000009297,1.0,False,0,0,621.02,54.08,14638.878,8000,False,
+constant,2026-11-20T22:04:59.639+00:00,r-000044,721.1856762269166,fogC,medium,completed,available,failed,0.0,0.0,855.3713999990578,1.0,False,0,0,,,14638.878,8000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:59.653+00:00,r-000045,798.4782285697404,fogA,light,completed,available,failed,0.0,0.0,204.16759999898204,1.0,False,0,0,,,14529.2,3000,False,"fogA (http://100.83.84.3:8001/process): HTTP 503: {""detail"":""file pleine ou batterie epuisee""}"
+constant,2026-11-20T22:04:59.653+00:00,r-000045,798.4782285697404,fogB,light,completed,available,selected,0.0,0.0,177.6385000011942,1.0,False,0,0,605.04,13.66,14529.2,3000,False,
+constant,2026-11-20T22:04:59.653+00:00,r-000045,798.4782285697404,fogC,light,completed,available,failed,0.0,0.0,627.8209000010975,1.0,False,0,0,,,14529.2,3000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:59.669+00:00,r-000046,877.122583061015,fogA,heavy,completed,available,selected,0.0,0.0,241.56699999912234,1.0,False,0,0,3207.92,231.63,16190.626,20000,True,
+constant,2026-11-20T22:04:59.669+00:00,r-000046,877.122583061015,fogB,heavy,completed,available,not_selected,0.0,0.0,264.43939999990107,1.0,False,0,0,,,16190.626,20000,True,
+constant,2026-11-20T22:04:59.669+00:00,r-000046,877.122583061015,fogC,heavy,completed,available,failed,0.0,0.0,594.7687000007136,1.0,False,0,0,,,16190.626,20000,True,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:59.686+00:00,r-000047,904.1020825250805,fogA,light,completed,available,failed,0.0,0.0,238.17069999859086,1.0,False,0,0,,,14509.988,3000,False,"fogA (http://100.83.84.3:8001/process): HTTP 503: {""detail"":""file pleine ou batterie epuisee""}"
+constant,2026-11-20T22:04:59.686+00:00,r-000047,904.1020825250805,fogB,light,completed,available,selected,0.0,0.0,243.13669999901322,1.0,False,0,0,550.35,18.35,14509.988,3000,False,
+constant,2026-11-20T22:04:59.686+00:00,r-000047,904.1020825250805,fogC,light,completed,available,failed,0.0,0.0,591.0399000003963,1.0,False,0,0,,,14509.988,3000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:59.700+00:00,r-000048,930.2084716179485,fogA,heavy,completed,available,failed,0.0,0.0,283.60430000066117,1.0,False,0,0,,,14618.834,20000,True,"fogA (http://100.83.84.3:8001/process): HTTP 503: {""detail"":""file pleine ou batterie epuisee""}"
+constant,2026-11-20T22:04:59.700+00:00,r-000048,930.2084716179485,fogB,heavy,completed,available,selected,0.0,0.0,251.39649999982794,1.0,False,0,0,554.57,143.61,14618.834,20000,True,
+constant,2026-11-20T22:04:59.700+00:00,r-000048,930.2084716179485,fogC,heavy,completed,available,failed,0.0,0.0,680.3337000001193,1.0,False,0,0,,,14618.834,20000,True,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:59.716+00:00,r-000049,946.6068921456052,fogA,light,completed,available,failed,0.0,0.0,275.9487999992416,1.0,False,0,0,,,14636.268,3000,False,"fogA (http://100.83.84.3:8001/process): HTTP 503: {""detail"":""file pleine ou batterie epuisee""}"
+constant,2026-11-20T22:04:59.716+00:00,r-000049,946.6068921456052,fogB,light,completed,available,selected,0.0,0.0,246.65549999917857,1.0,False,0,0,674.65,15.19,14636.268,3000,False,
+constant,2026-11-20T22:04:59.716+00:00,r-000049,946.6068921456052,fogC,light,completed,available,failed,0.0,0.0,558.8939000008395,1.0,False,0,0,,,14636.268,3000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:59.731+00:00,r-000050,952.4807215658215,fogA,medium,completed,available,failed,0.0,0.0,332.6870999990206,1.0,False,0,0,,,14656.582,8000,False,"fogA (http://100.83.84.3:8001/process): HTTP 503: {""detail"":""file pleine ou batterie epuisee""}"
+constant,2026-11-20T22:04:59.731+00:00,r-000050,952.4807215658215,fogB,medium,completed,available,selected,0.0,0.0,275.4734999998618,1.0,False,0,0,686.93,43.82,14656.582,8000,False,
+constant,2026-11-20T22:04:59.731+00:00,r-000050,952.4807215658215,fogC,medium,completed,available,failed,0.0,0.0,665.9156999994593,1.0,False,0,0,,,14656.582,8000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:59.751+00:00,r-000051,965.9496753884533,fogA,light,completed,available,failed,0.0,0.0,402.4141999998392,1.0,False,0,0,,,14673.912,3000,False,"fogA (http://100.83.84.3:8001/process): HTTP 503: {""detail"":""file pleine ou batterie epuisee""}"
+constant,2026-11-20T22:04:59.751+00:00,r-000051,965.9496753884533,fogB,light,completed,available,selected,0.0,0.0,404.3790000014269,1.0,False,0,0,691.71,15.11,14673.912,3000,False,
+constant,2026-11-20T22:04:59.751+00:00,r-000051,965.9496753884533,fogC,light,completed,available,failed,0.0,0.0,825.4221999995934,1.0,False,0,0,,,14673.912,3000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:04:59.767+00:00,r-000052,982.3695262023323,fogA,light,completed,available,failed,0.0,0.0,450.1293999983318,1.0,False,0,0,,,14669.774,3000,False,"fogA (http://100.83.84.3:8001/process): HTTP 503: {""detail"":""file pleine ou batterie epuisee""}"
+constant,2026-11-20T22:04:59.767+00:00,r-000052,982.3695262023323,fogB,light,completed,available,selected,0.0,0.0,449.9130000003788,1.0,False,0,0,709.57,12.34,14669.774,3000,False,
+constant,2026-11-20T22:04:59.767+00:00,r-000052,982.3695262023323,fogC,light,completed,available,failed,0.0,0.0,1398.9533000003576,1.0,False,0,0,,,14669.774,3000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:05:00.071+00:00,r-000053,992.1138541080275,fogA,light,completed,available,not_selected,0.0,0.0,465.07090000159224,1.0,False,0,0,,,12337.327,3000,False,
+constant,2026-11-20T22:05:00.071+00:00,r-000053,992.1138541080275,fogB,light,completed,available,not_selected,0.0,0.0,506.5386000005674,1.0,False,0,0,,,12337.327,3000,False,
+constant,2026-11-20T22:05:00.071+00:00,r-000053,992.1138541080275,fogC,light,completed,available,selected,0.0,0.0,1388.525500000469,1.0,False,0,0,0.02,44.89,12337.327,3000,False,
+constant,2026-11-20T22:05:00.095+00:00,r-000054,997.9888354556892,fogA,light,completed,available,not_selected,0.0,0.0,606.5299000001687,1.0,False,0,0,,,12489.41,3000,False,
+constant,2026-11-20T22:05:00.095+00:00,r-000054,997.9888354556892,fogB,light,completed,available,not_selected,0.0,0.0,752.1541000005527,1.0,False,0,0,,,12489.41,3000,False,
+constant,2026-11-20T22:05:00.095+00:00,r-000054,997.9888354556892,fogC,light,completed,available,selected,0.0,0.0,988.1434999988414,1.0,False,0,0,0.48,34.2,12489.41,3000,False,
+constant,2026-11-20T22:05:00.114+00:00,r-000055,1003.3539861162516,fogA,light,completed,available,selected,0.0,0.0,750.5259999998088,1.0,False,0,0,3340.47,65.08,16150.3,3000,False,
+constant,2026-11-20T22:05:00.114+00:00,r-000055,1003.3539861162516,fogB,light,completed,available,not_selected,0.0,0.0,776.8933000006655,1.0,False,0,0,,,16150.3,3000,False,
+constant,2026-11-20T22:05:00.114+00:00,r-000055,1003.3539861162516,fogC,light,completed,available,failed,0.0,0.0,1358.8942000005773,1.0,False,0,0,,,16150.3,3000,False,fogC (http://100.120.160.68:8003/process): 
+constant,2026-11-20T22:05:00.897+00:00,r-000056,1023.9087713882175,fogA,medium,completed,available,not_selected,0.0,0.0,774.6768000015436,1.0,False,0,0,,,12406.154,8000,False,
+constant,2026-11-20T22:05:00.897+00:00,r-000056,1023.9087713882175,fogB,medium,completed,available,not_selected,0.0,0.0,774.1707999994105,1.0,False,0,0,,,12406.154,8000,False,
+constant,2026-11-20T22:05:00.897+00:00,r-000056,1023.9087713882175,fogC,medium,completed,available,selected,0.0,0.0,1351.7762000010407,1.0,False,0,0,35.9,94.45,12406.154,8000,False,
+constant,2026-11-20T22:05:00.916+00:00,r-000057,1033.353045653874,fogA,light,completed,available,not_selected,0.0,0.0,935.1208999996743,1.0,False,0,0,,,12669.502,3000,False,
+constant,2026-11-20T22:05:00.916+00:00,r-000057,1033.353045653874,fogB,light,completed,available,not_selected,0.0,0.0,934.3238000001293,1.0,False,0,0,,,12669.502,3000,False,
+constant,2026-11-20T22:05:00.916+00:00,r-000057,1033.353045653874,fogC,light,completed,available,selected,0.0,0.0,1331.137299999682,1.0,False,0,0,0.03,27.63,12669.502,3000,False,
+constant,2026-11-20T22:05:00.929+00:00,r-000058,1040.9419314541015,fogA,light,completed,available,not_selected,0.0,0.0,951.3751000013144,1.0,False,0,0,,,12321.129,3000,False,
+constant,2026-11-20T22:05:00.929+00:00,r-000058,1040.9419314541015,fogB,light,completed,available,not_selected,0.0,0.0,950.0167000005604,1.0,False,0,0,,,12321.129,3000,False,
+constant,2026-11-20T22:05:00.929+00:00,r-000058,1040.9419314541015,fogC,light,completed,available,selected,0.0,0.0,1323.9897999992536,1.0,False,0,0,45.88,28.68,12321.129,3000,False,
+constant,2026-11-20T22:05:00.942+00:00,r-000059,1054.5949079011564,fogA,light,completed,available,not_selected,0.0,0.0,1310.9456000001956,1.0,False,0,0,,,12370.943,3000,False,
+constant,2026-11-20T22:05:00.942+00:00,r-000059,1054.5949079011564,fogB,light,completed,available,not_selected,0.0,0.0,1309.6722000009322,1.0,False,0,0,,,12370.943,3000,False,
+constant,2026-11-20T22:05:00.942+00:00,r-000059,1054.5949079011564,fogC,light,completed,available,selected,0.0,0.0,1451.0021000005509,1.0,False,0,0,80.71,13.67,12370.943,3000,False,
+constant,2026-11-20T22:05:00.954+00:00,r-000060,1064.5145168727825,fogA,medium,completed,available,not_selected,0.0,0.0,1245.437600000514,1.0,False,0,0,,,12382.005,8000,False,
+constant,2026-11-20T22:05:00.954+00:00,r-000060,1064.5145168727825,fogB,medium,completed,available,not_selected,0.0,0.0,1432.582100000218,1.0,False,0,0,,,12382.005,8000,False,
+constant,2026-11-20T22:05:00.954+00:00,r-000060,1064.5145168727825,fogC,medium,completed,available,selected,0.0,0.0,1432.2534999992058,1.0,False,0,0,95.53,47.94,12382.005,8000,False,
+constant,2026-11-20T22:05:00.966+00:00,r-000061,1080.3406462513187,fogA,light,completed,available,not_selected,0.0,0.0,1428.0049999997573,1.0,False,0,0,,,12375.453,3000,False,
+constant,2026-11-20T22:05:00.966+00:00,r-000061,1080.3406462513187,fogB,light,completed,available,not_selected,0.0,0.0,1424.8761999988346,1.0,False,0,0,,,12375.453,3000,False,
+constant,2026-11-20T22:05:00.966+00:00,r-000061,1080.3406462513187,fogC,light,completed,available,selected,0.0,0.0,3953.2840000010765,1.0,False,0,0,117.27,20.5,12375.453,3000,False,
+constant,2026-11-20T22:05:05.135+00:00,r-000062,1092.9426602560548,fogA,light,completed,available,not_selected,0.0,0.0,2237.826300000961,1.0,False,0,0,,,12790.935,3000,False,
+constant,2026-11-20T22:05:05.135+00:00,r-000062,1092.9426602560548,fogB,light,completed,available,not_selected,0.0,0.0,3612.0749000001524,1.0,False,0,0,,,12790.935,3000,False,
+constant,2026-11-20T22:05:05.135+00:00,r-000062,1092.9426602560548,fogC,light,completed,available,selected,0.0,0.0,11455.678899999839,1.0,False,0,0,0.02,13.28,12790.935,3000,False,
+constant,2026-11-20T22:05:01.979+00:00,r-000063,1093.5214877339172,fogA,light,completed,available,not_selected,0.0,0.0,3608.592700000372,1.0,False,0,0,,,12387.273,3000,False,
+constant,2026-11-20T22:05:01.979+00:00,r-000063,1093.5214877339172,fogB,light,completed,available,not_selected,0.0,0.0,3619.345400000384,1.0,False,0,0,,,12387.273,3000,False,
+constant,2026-11-20T22:05:01.979+00:00,r-000063,1093.5214877339172,fogC,light,completed,available,selected,0.0,0.0,6705.601599998772,1.0,False,0,0,138.83,17.02,12387.273,3000,False,
+constant,2026-11-20T22:05:01.994+00:00,r-000064,1110.5982267680247,fogA,medium,completed,available,not_selected,0.0,0.0,3577.760300000591,1.0,False,0,0,,,12401.264,8000,False,
+constant,2026-11-20T22:05:01.994+00:00,r-000064,1110.5982267680247,fogB,medium,completed,available,not_selected,0.0,0.0,6622.742699999435,1.0,False,0,0,,,12401.264,8000,False,
+constant,2026-11-20T22:05:01.994+00:00,r-000064,1110.5982267680247,fogC,medium,completed,available,selected,0.0,0.0,6663.481499999762,1.0,False,0,0,138.16,69.28,12401.264,8000,False,
+constant,2026-11-20T22:05:03.933+00:00,r-000065,1151.908435530644,fogA,medium,completed,available,not_selected,0.0,0.0,6648.921300000438,1.0,False,0,0,,,12348.832,8000,False,
+constant,2026-11-20T22:05:03.933+00:00,r-000065,1151.908435530644,fogB,medium,completed,available,not_selected,0.0,0.0,6647.987499998635,1.0,False,0,0,,,12348.832,8000,False,
+constant,2026-11-20T22:05:03.933+00:00,r-000065,1151.908435530644,fogC,medium,completed,available,selected,0.0,0.0,8542.37219999959,1.0,False,0,0,148.71,41.36,12348.832,8000,False,
+constant,2026-11-20T22:05:04.851+00:00,r-000066,1175.1907504537849,fogA,medium,completed,available,not_selected,0.0,0.0,8532.125600000654,1.0,False,0,0,,,12390.445,8000,False,
+constant,2026-11-20T22:05:04.851+00:00,r-000066,1175.1907504537849,fogB,medium,completed,available,not_selected,0.0,0.0,9614.992699998766,1.0,False,0,0,,,12390.445,8000,False,
+constant,2026-11-20T22:05:04.851+00:00,r-000066,1175.1907504537849,fogC,medium,completed,available,selected,0.0,0.0,10499.537300000156,1.0,False,0,0,0.01,31.95,12390.445,8000,False,
+constant,2026-11-20T22:05:05.132+00:00,r-000067,1192.743297427164,fogA,light,completed,available,not_selected,0.0,0.0,10412.448299999596,1.0,False,0,0,,,13586.964,3000,False,
+constant,2026-11-20T22:05:05.132+00:00,r-000067,1192.743297427164,fogB,light,completed,available,not_selected,0.0,0.0,10974.224499999764,1.0,False,0,0,,,13586.964,3000,False,
+constant,2026-11-20T22:05:05.132+00:00,r-000067,1192.743297427164,fogC,light,completed,available,selected,0.0,0.0,11312.030799999775,1.0,False,0,0,0.55,9.4,13586.964,3000,False,
+constant,2026-11-20T22:05:05.148+00:00,r-000068,1203.5419742849106,fogA,medium,completed,available,not_selected,0.0,0.0,11437.263100000564,1.0,False,0,0,,,12903.614,8000,False,
+constant,2026-11-20T22:05:05.148+00:00,r-000068,1203.5419742849106,fogB,medium,completed,available,not_selected,0.0,0.0,11306.96270000044,1.0,False,0,0,,,12903.614,8000,False,
+constant,2026-11-20T22:05:05.148+00:00,r-000068,1203.5419742849106,fogC,medium,completed,available,selected,0.0,0.0,11307.678099999976,1.0,False,0,0,0.01,30.36,12903.614,8000,False,
+constant,2026-11-20T22:05:05.152+00:00,r-000069,1221.6822969732686,fogA,medium,completed,available,not_selected,0.0,0.0,11426.519700000426,1.0,False,0,0,,,12737.346,8000,False,
+constant,2026-11-20T22:05:05.152+00:00,r-000069,1221.6822969732686,fogB,medium,completed,available,not_selected,0.0,0.0,11299.98599999999,1.0,False,0,0,,,12737.346,8000,False,
+constant,2026-11-20T22:05:05.152+00:00,r-000069,1221.6822969732686,fogC,medium,completed,available,selected,0.0,0.0,11297.814400000789,1.0,False,0,0,1.02,62.37,12737.346,8000,False,
+constant,2026-11-20T22:05:05.198+00:00,r-000070,1233.2385993615967,fogA,light,completed,available,not_selected,0.0,0.0,11432.742200000575,1.0,False,0,0,,,14313.394,3000,False,
+constant,2026-11-20T22:05:05.198+00:00,r-000070,1233.2385993615967,fogB,light,completed,available,not_selected,0.0,0.0,11569.370699999126,1.0,False,0,0,,,14313.394,3000,False,
+constant,2026-11-20T22:05:05.198+00:00,r-000070,1233.2385993615967,fogC,light,completed,available,selected,0.0,0.0,11562.460799999826,1.0,False,0,0,0.02,23.27,14313.394,3000,False,
+constant,2026-11-20T22:05:05.188+00:00,r-000071,1238.6334820794539,fogA,light,completed,available,not_selected,0.0,0.0,11526.741699999548,1.0,False,0,0,,,13640.314,3000,False,
+constant,2026-11-20T22:05:05.188+00:00,r-000071,1238.6334820794539,fogB,light,completed,available,not_selected,0.0,0.0,11524.959700000181,1.0,False,0,0,,,13640.314,3000,False,
+constant,2026-11-20T22:05:05.188+00:00,r-000071,1238.6334820794539,fogC,light,completed,available,selected,0.0,0.0,11523.774600000252,1.0,False,0,0,0.01,37.28,13640.314,3000,False,
+constant,2026-11-20T22:05:05.161+00:00,r-000072,1284.3362286524718,fogA,light,completed,available,not_selected,0.0,0.0,11382.214100000056,1.0,False,0,0,,,12638.063,3000,False,
+constant,2026-11-20T22:05:05.161+00:00,r-000072,1284.3362286524718,fogB,light,completed,available,not_selected,0.0,0.0,11376.410800001395,1.0,False,0,0,,,12638.063,3000,False,
+constant,2026-11-20T22:05:05.161+00:00,r-000072,1284.3362286524718,fogC,light,completed,available,selected,0.0,0.0,11399.354099999982,1.0,False,0,0,0.02,25.11,12638.063,3000,False,
+constant,2026-11-20T22:05:05.182+00:00,r-000073,1322.0735779020258,fogA,medium,completed,available,not_selected,0.0,0.0,11462.17120000074,1.0,False,0,0,,,13130.481,8000,False,
+constant,2026-11-20T22:05:05.182+00:00,r-000073,1322.0735779020258,fogB,medium,completed,available,not_selected,0.0,0.0,11319.90020000012,1.0,False,0,0,,,13130.481,8000,False,
+constant,2026-11-20T22:05:05.182+00:00,r-000073,1322.0735779020258,fogC,medium,completed,available,selected,0.0,0.0,11456.958200000372,1.0,False,0,0,22.3,53.97,13130.481,8000,False,
+constant,2026-11-20T22:05:05.195+00:00,r-000074,1325.5695693881257,fogA,light,completed,available,not_selected,0.0,0.0,11324.974900000598,1.0,False,0,0,,,12683.459,3000,False,
+constant,2026-11-20T22:05:05.195+00:00,r-000074,1325.5695693881257,fogB,light,completed,available,not_selected,0.0,0.0,11313.414700000067,1.0,False,0,0,,,12683.459,3000,False,
+constant,2026-11-20T22:05:05.195+00:00,r-000074,1325.5695693881257,fogC,light,completed,available,selected,0.0,0.0,11445.169799999348,1.0,False,0,0,93.56,30.55,12683.459,3000,False,
+constant,2026-11-20T22:05:04.507+00:00,r-000075,1325.869309405599,fogA,heavy,no_worker_available,unavailable,not_selected,,,,,,,,,,,20000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.507+00:00,r-000075,1325.869309405599,fogB,heavy,no_worker_available,unavailable,not_selected,,,,,,,,,,,20000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.507+00:00,r-000075,1325.869309405599,fogC,heavy,no_worker_available,unavailable,not_selected,,,,,,,,,,,20000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:05.294+00:00,r-000076,1347.6543730946394,fogA,light,completed,available,not_selected,0.0,0.0,11453.953399999591,1.0,False,0,0,,,13173.421,3000,False,
+constant,2026-11-20T22:05:05.294+00:00,r-000076,1347.6543730946394,fogB,light,completed,available,not_selected,0.0,0.0,11451.599199999691,1.0,False,0,0,,,13173.421,3000,False,
+constant,2026-11-20T22:05:05.294+00:00,r-000076,1347.6543730946394,fogC,light,completed,available,selected,0.0,0.0,11539.666200000283,1.0,False,0,0,51.47,43.73,13173.421,3000,False,
+constant,2026-11-20T22:05:04.856+00:00,r-000077,1415.6333469121014,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.856+00:00,r-000077,1415.6333469121014,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.856+00:00,r-000077,1415.6333469121014,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.856+00:00,r-000078,1433.8068823873266,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.856+00:00,r-000078,1433.8068823873266,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.856+00:00,r-000078,1433.8068823873266,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.992+00:00,r-000079,1440.3521511304646,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.992+00:00,r-000079,1440.3521511304646,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.992+00:00,r-000079,1440.3521511304646,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:05.334+00:00,r-000080,1444.2609213584476,fogA,light,completed,available,not_selected,0.0,0.0,11441.41430000127,1.0,False,0,0,,,12562.44,3000,False,
+constant,2026-11-20T22:05:05.334+00:00,r-000080,1444.2609213584476,fogB,light,completed,available,not_selected,0.0,0.0,11440.327700000125,1.0,False,0,0,,,12562.44,3000,False,
+constant,2026-11-20T22:05:05.334+00:00,r-000080,1444.2609213584476,fogC,light,completed,available,selected,0.0,0.0,11444.72549999955,1.0,False,0,0,103.79,23.36,12562.44,3000,False,
+constant,2026-11-20T22:05:05.339+00:00,r-000081,1448.4421101519395,fogA,light,completed,available,not_selected,0.0,0.0,11436.375100000078,1.0,False,0,0,,,12497.327,3000,False,
+constant,2026-11-20T22:05:05.339+00:00,r-000081,1448.4421101519395,fogB,light,completed,available,not_selected,0.0,0.0,11392.679399999906,1.0,False,0,0,,,12497.327,3000,False,
+constant,2026-11-20T22:05:05.339+00:00,r-000081,1448.4421101519395,fogC,light,completed,available,selected,0.0,0.0,11432.562899999539,1.0,False,0,0,39.26,7.45,12497.327,3000,False,
+constant,2026-11-20T22:05:05.593+00:00,r-000082,1452.487040581541,fogA,light,completed,available,not_selected,0.0,0.0,11423.793800000567,1.0,False,0,0,,,12866.978,3000,False,
+constant,2026-11-20T22:05:05.593+00:00,r-000082,1452.487040581541,fogB,light,completed,available,not_selected,0.0,0.0,11416.779499999393,1.0,False,0,0,,,12866.978,3000,False,
+constant,2026-11-20T22:05:05.593+00:00,r-000082,1452.487040581541,fogC,light,completed,available,selected,0.0,0.0,11735.407099999065,1.0,False,0,0,0.02,19.39,12866.978,3000,False,
+constant,2026-11-20T22:05:05.364+00:00,r-000083,1467.2226186525886,fogA,light,completed,available,not_selected,0.0,0.0,11413.512499999342,1.0,False,0,0,,,12590.495,3000,False,
+constant,2026-11-20T22:05:05.364+00:00,r-000083,1467.2226186525886,fogB,light,completed,available,not_selected,0.0,0.0,11368.86659999982,1.0,False,0,0,,,12590.495,3000,False,
+constant,2026-11-20T22:05:05.364+00:00,r-000083,1467.2226186525886,fogC,light,completed,available,selected,0.0,0.0,11434.302799998477,1.0,False,0,0,12.75,29.99,12590.495,3000,False,
+constant,2026-11-20T22:05:05.382+00:00,r-000084,1473.8926935941809,fogA,light,completed,available,not_selected,0.0,0.0,11406.169799998679,1.0,False,0,0,,,12610.754,3000,False,
+constant,2026-11-20T22:05:05.382+00:00,r-000084,1473.8926935941809,fogB,light,completed,available,not_selected,0.0,0.0,11369.377700000769,1.0,False,0,0,,,12610.754,3000,False,
+constant,2026-11-20T22:05:05.382+00:00,r-000084,1473.8926935941809,fogC,light,completed,available,selected,0.0,0.0,11466.141299999435,1.0,False,0,0,13.94,42.15,12610.754,3000,False,
+constant,2026-11-20T22:05:05.379+00:00,r-000085,1479.5361103579205,fogA,heavy,completed,available,not_selected,0.0,0.0,11392.578999999387,1.0,False,0,0,,,13551.331,20000,True,
+constant,2026-11-20T22:05:05.379+00:00,r-000085,1479.5361103579205,fogB,heavy,completed,available,not_selected,0.0,0.0,11384.968800000934,1.0,False,0,0,,,13551.331,20000,True,
+constant,2026-11-20T22:05:05.379+00:00,r-000085,1479.5361103579205,fogC,heavy,completed,available,selected,0.0,0.0,11454.671399998915,1.0,False,0,0,0.01,91.03,13551.331,20000,True,
+constant,2026-11-20T22:05:05.400+00:00,r-000086,1495.5036716218667,fogA,light,completed,available,not_selected,0.0,0.0,11368.805400001293,1.0,False,0,0,,,13475.73,3000,False,
+constant,2026-11-20T22:05:05.400+00:00,r-000086,1495.5036716218667,fogB,light,completed,available,not_selected,0.0,0.0,11410.327900000993,1.0,False,0,0,,,13475.73,3000,False,
+constant,2026-11-20T22:05:05.400+00:00,r-000086,1495.5036716218667,fogC,light,completed,available,selected,0.0,0.0,11432.630500001324,1.0,False,0,0,0.02,16.14,13475.73,3000,False,
+constant,2026-11-20T22:05:05.424+00:00,r-000087,1509.0847233727,fogA,heavy,completed,available,not_selected,0.0,0.0,11397.190300000148,1.0,False,0,0,,,12712.815,20000,True,
+constant,2026-11-20T22:05:05.424+00:00,r-000087,1509.0847233727,fogB,heavy,completed,available,not_selected,0.0,0.0,11395.280099999582,1.0,False,0,0,,,12712.815,20000,True,
+constant,2026-11-20T22:05:05.424+00:00,r-000087,1509.0847233727,fogC,heavy,completed,available,selected,0.0,0.0,11450.895100000707,1.0,False,0,0,0.04,117.73,12712.815,20000,True,
+constant,2026-11-20T22:05:05.415+00:00,r-000088,1547.6700132478893,fogA,light,completed,available,not_selected,0.0,0.0,11408.398400000806,1.0,False,0,0,,,12642.113,3000,False,
+constant,2026-11-20T22:05:05.415+00:00,r-000088,1547.6700132478893,fogB,light,completed,available,not_selected,0.0,0.0,11406.178000001091,1.0,False,0,0,,,12642.113,3000,False,
+constant,2026-11-20T22:05:05.415+00:00,r-000088,1547.6700132478893,fogC,light,completed,available,selected,0.0,0.0,11433.082499999728,1.0,False,0,0,0.02,22.97,12642.113,3000,False,
+constant,2026-11-20T22:05:05.410+00:00,r-000089,1553.4683486230313,fogA,medium,completed,available,not_selected,0.0,0.0,11399.650699999256,1.0,False,0,0,,,12563.427,8000,False,
+constant,2026-11-20T22:05:05.410+00:00,r-000089,1553.4683486230313,fogB,medium,completed,available,not_selected,0.0,0.0,11397.237900000619,1.0,False,0,0,,,12563.427,8000,False,
+constant,2026-11-20T22:05:05.410+00:00,r-000089,1553.4683486230313,fogC,medium,completed,available,selected,0.0,0.0,11415.204000000813,1.0,False,0,0,0.02,45.0,12563.427,8000,False,
+constant,2026-11-20T22:05:05.429+00:00,r-000090,1568.0177181009951,fogA,light,completed,available,not_selected,0.0,0.0,11365.255900000193,1.0,False,0,0,,,12645.83,3000,False,
+constant,2026-11-20T22:05:05.429+00:00,r-000090,1568.0177181009951,fogB,light,completed,available,not_selected,0.0,0.0,11361.968200000774,1.0,False,0,0,,,12645.83,3000,False,
+constant,2026-11-20T22:05:05.429+00:00,r-000090,1568.0177181009951,fogC,light,completed,available,selected,0.0,0.0,11412.430599999425,1.0,False,0,0,9.29,13.53,12645.83,3000,False,
+constant,2026-11-20T22:05:02.041+00:00,r-000091,1569.976329283197,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:02.041+00:00,r-000091,1569.976329283197,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:02.041+00:00,r-000091,1569.976329283197,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:02.043+00:00,r-000092,1570.446443849817,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:02.043+00:00,r-000092,1570.446443849817,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:02.043+00:00,r-000092,1570.446443849817,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:02.043+00:00,r-000093,1576.7890326167992,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:02.043+00:00,r-000093,1576.7890326167992,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:02.043+00:00,r-000093,1576.7890326167992,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:02.043+00:00,r-000094,1655.1574859039708,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:02.043+00:00,r-000094,1655.1574859039708,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:02.043+00:00,r-000094,1655.1574859039708,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:02.043+00:00,r-000095,1686.11376463538,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:02.043+00:00,r-000095,1686.11376463538,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:02.043+00:00,r-000095,1686.11376463538,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:02.044+00:00,r-000096,1694.7403912684765,fogA,heavy,no_worker_available,unavailable,not_selected,,,,,,,,,,,20000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:02.044+00:00,r-000096,1694.7403912684765,fogB,heavy,no_worker_available,unavailable,not_selected,,,,,,,,,,,20000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:02.044+00:00,r-000096,1694.7403912684765,fogC,heavy,no_worker_available,unavailable,not_selected,,,,,,,,,,,20000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:02.044+00:00,r-000097,1718.5738319189488,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:02.044+00:00,r-000097,1718.5738319189488,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:02.044+00:00,r-000097,1718.5738319189488,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:02.044+00:00,r-000098,1722.013563781569,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:02.044+00:00,r-000098,1722.013563781569,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:02.044+00:00,r-000098,1722.013563781569,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:02.044+00:00,r-000099,1748.5873327029924,fogA,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:02.044+00:00,r-000099,1748.5873327029924,fogB,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:02.044+00:00,r-000099,1748.5873327029924,fogC,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:02.044+00:00,r-000100,1794.6070859953002,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:02.044+00:00,r-000100,1794.6070859953002,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:02.044+00:00,r-000100,1794.6070859953002,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:02.044+00:00,r-000101,1795.0688313966975,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:02.044+00:00,r-000101,1795.0688313966975,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:02.044+00:00,r-000101,1795.0688313966975,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:02.044+00:00,r-000102,1827.6568926410446,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:02.044+00:00,r-000102,1827.6568926410446,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:02.044+00:00,r-000102,1827.6568926410446,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:02.044+00:00,r-000103,1856.1551886671266,fogA,heavy,no_worker_available,unavailable,not_selected,,,,,,,,,,,20000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:02.044+00:00,r-000103,1856.1551886671266,fogB,heavy,no_worker_available,unavailable,not_selected,,,,,,,,,,,20000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:02.044+00:00,r-000103,1856.1551886671266,fogC,heavy,no_worker_available,unavailable,not_selected,,,,,,,,,,,20000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:02.044+00:00,r-000104,1861.6342138776176,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:02.044+00:00,r-000104,1861.6342138776176,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:02.044+00:00,r-000104,1861.6342138776176,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:03.148+00:00,r-000105,1865.3632069917433,fogA,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:03.148+00:00,r-000105,1865.3632069917433,fogB,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:03.148+00:00,r-000105,1865.3632069917433,fogC,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:03.149+00:00,r-000106,1886.4134199717716,fogA,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:03.149+00:00,r-000106,1886.4134199717716,fogB,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:03.149+00:00,r-000106,1886.4134199717716,fogC,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:03.149+00:00,r-000107,1926.1847761336328,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:03.149+00:00,r-000107,1926.1847761336328,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:03.149+00:00,r-000107,1926.1847761336328,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:03.149+00:00,r-000108,1933.6685962748995,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:03.149+00:00,r-000108,1933.6685962748995,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:03.149+00:00,r-000108,1933.6685962748995,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:03.149+00:00,r-000109,1941.463542853021,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:03.149+00:00,r-000109,1941.463542853021,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:03.149+00:00,r-000109,1941.463542853021,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:03.149+00:00,r-000110,1947.0682862888848,fogA,heavy,no_worker_available,unavailable,not_selected,,,,,,,,,,,20000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:03.149+00:00,r-000110,1947.0682862888848,fogB,heavy,no_worker_available,unavailable,not_selected,,,,,,,,,,,20000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:03.149+00:00,r-000110,1947.0682862888848,fogC,heavy,no_worker_available,unavailable,not_selected,,,,,,,,,,,20000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:03.149+00:00,r-000111,1979.9009872494887,fogA,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:03.149+00:00,r-000111,1979.9009872494887,fogB,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:03.149+00:00,r-000111,1979.9009872494887,fogC,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:03.149+00:00,r-000112,1985.4697669322316,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:03.149+00:00,r-000112,1985.4697669322316,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:03.149+00:00,r-000112,1985.4697669322316,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:03.149+00:00,r-000113,1991.7490871544587,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:03.149+00:00,r-000113,1991.7490871544587,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:03.149+00:00,r-000113,1991.7490871544587,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:03.149+00:00,r-000114,1997.5620437384866,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:03.149+00:00,r-000114,1997.5620437384866,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:03.149+00:00,r-000114,1997.5620437384866,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:03.149+00:00,r-000115,2082.88823993845,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:03.149+00:00,r-000115,2082.88823993845,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:03.149+00:00,r-000115,2082.88823993845,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:03.149+00:00,r-000116,2090.9465527791444,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:03.149+00:00,r-000116,2090.9465527791444,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:03.149+00:00,r-000116,2090.9465527791444,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:03.149+00:00,r-000117,2100.6625047408106,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:03.149+00:00,r-000117,2100.6625047408106,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:03.149+00:00,r-000117,2100.6625047408106,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:03.150+00:00,r-000118,2131.426534321186,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:03.150+00:00,r-000118,2131.426534321186,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:03.150+00:00,r-000118,2131.426534321186,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:03.150+00:00,r-000119,2149.208319611628,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:03.150+00:00,r-000119,2149.208319611628,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:03.150+00:00,r-000119,2149.208319611628,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:03.150+00:00,r-000120,2154.148032898046,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:03.150+00:00,r-000120,2154.148032898046,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:03.150+00:00,r-000120,2154.148032898046,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:03.150+00:00,r-000121,2168.606877279196,fogA,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:03.150+00:00,r-000121,2168.606877279196,fogB,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:03.150+00:00,r-000121,2168.606877279196,fogC,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:03.150+00:00,r-000122,2169.7571538685743,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:03.150+00:00,r-000122,2169.7571538685743,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:03.150+00:00,r-000122,2169.7571538685743,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.000+00:00,r-000123,2195.253731108396,fogA,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.000+00:00,r-000123,2195.253731108396,fogB,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.000+00:00,r-000123,2195.253731108396,fogC,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.000+00:00,r-000124,2208.70819151373,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.000+00:00,r-000124,2208.70819151373,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.000+00:00,r-000124,2208.70819151373,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.000+00:00,r-000125,2216.1887838763223,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.000+00:00,r-000125,2216.1887838763223,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.000+00:00,r-000125,2216.1887838763223,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.000+00:00,r-000126,2227.4084454122976,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.000+00:00,r-000126,2227.4084454122976,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.000+00:00,r-000126,2227.4084454122976,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.000+00:00,r-000127,2266.248376102995,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.000+00:00,r-000127,2266.248376102995,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.000+00:00,r-000127,2266.248376102995,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.000+00:00,r-000128,2266.941021244332,fogA,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.000+00:00,r-000128,2266.941021244332,fogB,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.000+00:00,r-000128,2266.941021244332,fogC,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.000+00:00,r-000129,2268.503278518629,fogA,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.000+00:00,r-000129,2268.503278518629,fogB,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.000+00:00,r-000129,2268.503278518629,fogC,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.000+00:00,r-000130,2271.289235543481,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.000+00:00,r-000130,2271.289235543481,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.000+00:00,r-000130,2271.289235543481,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.001+00:00,r-000131,2313.7289032052204,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.001+00:00,r-000131,2313.7289032052204,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.001+00:00,r-000131,2313.7289032052204,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.001+00:00,r-000132,2346.19629007414,fogA,heavy,no_worker_available,unavailable,not_selected,,,,,,,,,,,20000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.001+00:00,r-000132,2346.19629007414,fogB,heavy,no_worker_available,unavailable,not_selected,,,,,,,,,,,20000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.001+00:00,r-000132,2346.19629007414,fogC,heavy,no_worker_available,unavailable,not_selected,,,,,,,,,,,20000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.001+00:00,r-000133,2352.01957995836,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.001+00:00,r-000133,2352.01957995836,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.001+00:00,r-000133,2352.01957995836,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.001+00:00,r-000134,2382.178998837949,fogA,heavy,no_worker_available,unavailable,not_selected,,,,,,,,,,,20000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.001+00:00,r-000134,2382.178998837949,fogB,heavy,no_worker_available,unavailable,not_selected,,,,,,,,,,,20000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.001+00:00,r-000134,2382.178998837949,fogC,heavy,no_worker_available,unavailable,not_selected,,,,,,,,,,,20000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.001+00:00,r-000135,2390.159983576553,fogA,heavy,no_worker_available,unavailable,not_selected,,,,,,,,,,,20000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.001+00:00,r-000135,2390.159983576553,fogB,heavy,no_worker_available,unavailable,not_selected,,,,,,,,,,,20000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.001+00:00,r-000135,2390.159983576553,fogC,heavy,no_worker_available,unavailable,not_selected,,,,,,,,,,,20000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.001+00:00,r-000136,2403.5703284257547,fogA,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.001+00:00,r-000136,2403.5703284257547,fogB,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.001+00:00,r-000136,2403.5703284257547,fogC,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.001+00:00,r-000137,2430.191864580208,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.001+00:00,r-000137,2430.191864580208,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.001+00:00,r-000137,2430.191864580208,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.001+00:00,r-000138,2441.7068839342614,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.001+00:00,r-000138,2441.7068839342614,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.001+00:00,r-000138,2441.7068839342614,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.002+00:00,r-000139,2454.9373869599103,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.002+00:00,r-000139,2454.9373869599103,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.002+00:00,r-000139,2454.9373869599103,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.002+00:00,r-000140,2463.440831035066,fogA,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.002+00:00,r-000140,2463.440831035066,fogB,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.002+00:00,r-000140,2463.440831035066,fogC,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.002+00:00,r-000141,2485.1621926417997,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.002+00:00,r-000141,2485.1621926417997,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.002+00:00,r-000141,2485.1621926417997,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.530+00:00,r-000142,2492.7964287309937,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.530+00:00,r-000142,2492.7964287309937,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.530+00:00,r-000142,2492.7964287309937,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.530+00:00,r-000143,2505.695898423487,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.530+00:00,r-000143,2505.695898423487,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.530+00:00,r-000143,2505.695898423487,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.530+00:00,r-000144,2537.1696996359187,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.530+00:00,r-000144,2537.1696996359187,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.530+00:00,r-000144,2537.1696996359187,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.530+00:00,r-000145,2557.5505263477503,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.530+00:00,r-000145,2557.5505263477503,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.530+00:00,r-000145,2557.5505263477503,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.530+00:00,r-000146,2563.5370762953353,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.530+00:00,r-000146,2563.5370762953353,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.530+00:00,r-000146,2563.5370762953353,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.530+00:00,r-000147,2633.625585848167,fogA,heavy,no_worker_available,unavailable,not_selected,,,,,,,,,,,20000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.530+00:00,r-000147,2633.625585848167,fogB,heavy,no_worker_available,unavailable,not_selected,,,,,,,,,,,20000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.530+00:00,r-000147,2633.625585848167,fogC,heavy,no_worker_available,unavailable,not_selected,,,,,,,,,,,20000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.530+00:00,r-000148,2637.7715166751045,fogA,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.530+00:00,r-000148,2637.7715166751045,fogB,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.530+00:00,r-000148,2637.7715166751045,fogC,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.530+00:00,r-000149,2661.108631778749,fogA,heavy,no_worker_available,unavailable,not_selected,,,,,,,,,,,20000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.530+00:00,r-000149,2661.108631778749,fogB,heavy,no_worker_available,unavailable,not_selected,,,,,,,,,,,20000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.530+00:00,r-000149,2661.108631778749,fogC,heavy,no_worker_available,unavailable,not_selected,,,,,,,,,,,20000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.530+00:00,r-000150,2670.779173270538,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.530+00:00,r-000150,2670.779173270538,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.530+00:00,r-000150,2670.779173270538,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.530+00:00,r-000151,2681.057796517997,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.530+00:00,r-000151,2681.057796517997,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.530+00:00,r-000151,2681.057796517997,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.530+00:00,r-000152,2685.1765859169573,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.530+00:00,r-000152,2685.1765859169573,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.530+00:00,r-000152,2685.1765859169573,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.530+00:00,r-000153,2769.3539534986066,fogA,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.530+00:00,r-000153,2769.3539534986066,fogB,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.530+00:00,r-000153,2769.3539534986066,fogC,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.530+00:00,r-000154,2786.0781685075995,fogA,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.530+00:00,r-000154,2786.0781685075995,fogB,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.530+00:00,r-000154,2786.0781685075995,fogC,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.531+00:00,r-000155,2815.5970944748738,fogA,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.531+00:00,r-000155,2815.5970944748738,fogB,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.531+00:00,r-000155,2815.5970944748738,fogC,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.531+00:00,r-000156,2818.1601949279852,fogA,heavy,no_worker_available,unavailable,not_selected,,,,,,,,,,,20000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.531+00:00,r-000156,2818.1601949279852,fogB,heavy,no_worker_available,unavailable,not_selected,,,,,,,,,,,20000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.531+00:00,r-000156,2818.1601949279852,fogC,heavy,no_worker_available,unavailable,not_selected,,,,,,,,,,,20000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.531+00:00,r-000157,2827.8613074329896,fogA,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.531+00:00,r-000157,2827.8613074329896,fogB,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.531+00:00,r-000157,2827.8613074329896,fogC,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.531+00:00,r-000158,2840.2386251162993,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.531+00:00,r-000158,2840.2386251162993,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.531+00:00,r-000158,2840.2386251162993,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.531+00:00,r-000159,2889.4054692723225,fogA,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.531+00:00,r-000159,2889.4054692723225,fogB,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.531+00:00,r-000159,2889.4054692723225,fogC,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.531+00:00,r-000160,2946.5363683428604,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.531+00:00,r-000160,2946.5363683428604,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.531+00:00,r-000160,2946.5363683428604,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.532+00:00,r-000161,2947.4089742508795,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.532+00:00,r-000161,2947.4089742508795,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.532+00:00,r-000161,2947.4089742508795,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.532+00:00,r-000162,2972.921095420529,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.532+00:00,r-000162,2972.921095420529,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.532+00:00,r-000162,2972.921095420529,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.532+00:00,r-000163,2975.5345966768664,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.532+00:00,r-000163,2975.5345966768664,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.532+00:00,r-000163,2975.5345966768664,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.532+00:00,r-000164,3011.5243209065256,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.532+00:00,r-000164,3011.5243209065256,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.532+00:00,r-000164,3011.5243209065256,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.532+00:00,r-000165,3066.223298942192,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.532+00:00,r-000165,3066.223298942192,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.532+00:00,r-000165,3066.223298942192,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.863+00:00,r-000166,3169.696156102004,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.863+00:00,r-000166,3169.696156102004,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.863+00:00,r-000166,3169.696156102004,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.863+00:00,r-000167,3173.1119115673982,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.863+00:00,r-000167,3173.1119115673982,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.863+00:00,r-000167,3173.1119115673982,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.864+00:00,r-000168,3173.5101585305993,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.864+00:00,r-000168,3173.5101585305993,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.864+00:00,r-000168,3173.5101585305993,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.864+00:00,r-000169,3234.259667737094,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.864+00:00,r-000169,3234.259667737094,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.864+00:00,r-000169,3234.259667737094,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.864+00:00,r-000170,3235.203325018982,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.864+00:00,r-000170,3235.203325018982,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.864+00:00,r-000170,3235.203325018982,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.864+00:00,r-000171,3245.6514013861274,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.864+00:00,r-000171,3245.6514013861274,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.864+00:00,r-000171,3245.6514013861274,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.864+00:00,r-000172,3255.238887525388,fogA,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.864+00:00,r-000172,3255.238887525388,fogB,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.864+00:00,r-000172,3255.238887525388,fogC,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.864+00:00,r-000173,3276.564838422196,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.864+00:00,r-000173,3276.564838422196,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.864+00:00,r-000173,3276.564838422196,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.864+00:00,r-000174,3287.0551379445665,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.864+00:00,r-000174,3287.0551379445665,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.864+00:00,r-000174,3287.0551379445665,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.864+00:00,r-000175,3299.6291847935104,fogA,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.864+00:00,r-000175,3299.6291847935104,fogB,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.864+00:00,r-000175,3299.6291847935104,fogC,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.864+00:00,r-000176,3315.5201263849162,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.864+00:00,r-000176,3315.5201263849162,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.864+00:00,r-000176,3315.5201263849162,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.864+00:00,r-000177,3319.695737036805,fogA,heavy,no_worker_available,unavailable,not_selected,,,,,,,,,,,20000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.864+00:00,r-000177,3319.695737036805,fogB,heavy,no_worker_available,unavailable,not_selected,,,,,,,,,,,20000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.864+00:00,r-000177,3319.695737036805,fogC,heavy,no_worker_available,unavailable,not_selected,,,,,,,,,,,20000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.864+00:00,r-000178,3327.315979679267,fogA,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.864+00:00,r-000178,3327.315979679267,fogB,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.864+00:00,r-000178,3327.315979679267,fogC,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.865+00:00,r-000179,3333.324023917414,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.865+00:00,r-000179,3333.324023917414,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.865+00:00,r-000179,3333.324023917414,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:04.865+00:00,r-000180,3347.9856813570673,fogA,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:04.865+00:00,r-000180,3347.9856813570673,fogB,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:04.865+00:00,r-000180,3347.9856813570673,fogC,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:05.027+00:00,r-000181,3365.18366514321,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:05.027+00:00,r-000181,3365.18366514321,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:05.027+00:00,r-000181,3365.18366514321,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:05.028+00:00,r-000182,3369.172988012139,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:05.028+00:00,r-000182,3369.172988012139,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:05.028+00:00,r-000182,3369.172988012139,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:05.028+00:00,r-000183,3369.220222432476,fogA,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:05.028+00:00,r-000183,3369.220222432476,fogB,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:05.028+00:00,r-000183,3369.220222432476,fogC,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:05.028+00:00,r-000184,3371.5914279749936,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:05.028+00:00,r-000184,3371.5914279749936,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:05.028+00:00,r-000184,3371.5914279749936,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:05.028+00:00,r-000185,3393.2927484754964,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:05.028+00:00,r-000185,3393.2927484754964,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:05.028+00:00,r-000185,3393.2927484754964,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:05.028+00:00,r-000186,3393.3321675791854,fogA,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:05.028+00:00,r-000186,3393.3321675791854,fogB,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:05.028+00:00,r-000186,3393.3321675791854,fogC,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:05.029+00:00,r-000187,3400.905272291932,fogA,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:05.029+00:00,r-000187,3400.905272291932,fogB,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:05.029+00:00,r-000187,3400.905272291932,fogC,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:05.029+00:00,r-000188,3433.113344144488,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:05.029+00:00,r-000188,3433.113344144488,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:05.029+00:00,r-000188,3433.113344144488,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:05.029+00:00,r-000189,3464.7285445895836,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:05.029+00:00,r-000189,3464.7285445895836,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:05.029+00:00,r-000189,3464.7285445895836,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:05.029+00:00,r-000190,3488.0389988637753,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:05.029+00:00,r-000190,3488.0389988637753,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:05.029+00:00,r-000190,3488.0389988637753,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:05.029+00:00,r-000191,3489.1318416754684,fogA,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:05.029+00:00,r-000191,3489.1318416754684,fogB,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:05.029+00:00,r-000191,3489.1318416754684,fogC,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:05.029+00:00,r-000192,3515.4181148136163,fogA,heavy,no_worker_available,unavailable,not_selected,,,,,,,,,,,20000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:05.029+00:00,r-000192,3515.4181148136163,fogB,heavy,no_worker_available,unavailable,not_selected,,,,,,,,,,,20000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:05.029+00:00,r-000192,3515.4181148136163,fogC,heavy,no_worker_available,unavailable,not_selected,,,,,,,,,,,20000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:05.029+00:00,r-000193,3535.620695818342,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:05.029+00:00,r-000193,3535.620695818342,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:05.029+00:00,r-000193,3535.620695818342,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:05.029+00:00,r-000194,3552.83284004355,fogA,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:05.029+00:00,r-000194,3552.83284004355,fogB,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:05.029+00:00,r-000194,3552.83284004355,fogC,medium,no_worker_available,unavailable,not_selected,,,,,,,,,,,8000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:05.029+00:00,r-000195,3558.6117986507343,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:05.029+00:00,r-000195,3558.6117986507343,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:05.029+00:00,r-000195,3558.6117986507343,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:05.141+00:00,r-000196,3580.7505318451053,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:05.141+00:00,r-000196,3580.7505318451053,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:05.141+00:00,r-000196,3580.7505318451053,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:05.141+00:00,r-000197,3589.362696730601,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:05.141+00:00,r-000197,3589.362696730601,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:05.141+00:00,r-000197,3589.362696730601,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:05.141+00:00,r-000198,3593.056846823108,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:05.141+00:00,r-000198,3593.056846823108,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:05.141+00:00,r-000198,3593.056846823108,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 
+constant,2026-11-20T22:05:05.142+00:00,r-000199,3601.592313254562,fogA,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogA (http://100.83.84.3:8001/state): 
+constant,2026-11-20T22:05:05.142+00:00,r-000199,3601.592313254562,fogB,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogB (http://100.83.84.3:8002/state): 
+constant,2026-11-20T22:05:05.142+00:00,r-000199,3601.592313254562,fogC,light,no_worker_available,unavailable,not_selected,,,,,,,,,,,3000,,fogC (http://100.120.160.68:8003/state): 

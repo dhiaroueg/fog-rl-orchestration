@@ -79,6 +79,17 @@ diurnal_peak_phase: 0.5
 python -m orchestrator.run --config experiments/configs/traffic_diurnal.yaml --seed 1000
 ```
 
+Chaque exécution de `orchestrator.run` écrit aussi un CSV de mesures des nœuds
+Fog `fogA`, `fogB` et `fogC`, avec le scénario inscrit sur chaque ligne.
+Sans `--output`, chaque scénario produit des fichiers distincts, par exemple
+`results/orchestration_flash_crowd.jsonl` et
+`results/orchestration_flash_crowd_measurements.csv`.
+Avec `--output results/workflow.jsonl`, le CSV est
+`results/workflow_flash_crowd_measurements.csv`.
+Le CSV contient l'état observé, le RTT, la charge CPU, la file, ainsi que le
+temps d'attente et le temps de service du nœud choisi. Un nœud injoignable est
+conservé dans le fichier avec son erreur et ses mesures vides.
+
 La licence, la version et la transformation de la trace publique doivent être
 consignées avec les résultats. Les fichiers de données ne sont pas téléchargés
 automatiquement par le générateur.
