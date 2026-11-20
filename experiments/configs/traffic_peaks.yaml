@@ -1,0 +1,7 @@
+scenario: peaks
+rho: 0.6
+n_requests: 2000
+peak_low_mean_ms: 30000
+peak_high_mean_ms: 10000
+peak_low_multiplier: 0.5
+peak_high_multiplier: 2.5

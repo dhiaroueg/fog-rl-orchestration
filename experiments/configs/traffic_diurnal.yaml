@@ -1,0 +1,23 @@
+scenario: diurnal
+# rho représente la charge moyenne du système.
+rho: 0.6
+duration_ms: 600000
+# One simulated day compressed into ten minutes for short experiments.
+# La durée totale est 600 000 ms, soit 10 minutes simulées.
+diurnal_period_ms: 600000 
+# L’amplitude contrôle l’écart entre les périodes faibles et fortes.
+diurnal_amplitude: 0.8
+# Cette valeur indique la position du pic dans le cycle. la valeur 0.5 signifie que le pic se produit à la moitié de la période.
+# si on va mettre 0 cad au début de la période et si 1 le pic se produit a la fin
+diurnal_peak_phase: 0.5
+# Cette valeur découpe le cycle en segments réguliers.
+profile_resolution_ms: 1000
+
+# Le graphique correspond donc à une seule bosse sinusoïdale :
+# 108 req/s  |          ****
+#            |        **    **
+# 60 req/s   |      **        **
+#            |    **            **
+# 12 req/s   |***                ***
+#            +------------------------
+#            0    150   300   450   600 s

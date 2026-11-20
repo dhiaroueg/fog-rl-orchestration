@@ -1,0 +1,14 @@
+scenario: flash_crowd
+rho: 0.6
+n_requests: 2000
+# C’est le niveau maximal du pic.
+# Pendant le plateau :
+# multiplicateur = 5
+# débit estimé = 60 x 5
+# = 300 requêtes/s
+flash_peak_multiplier: 5.0
+flash_start_fraction: 0.2
+flash_ramp_up_fraction: 0.15
+flash_plateau_fraction: 0.2
+flash_ramp_down_fraction: 0.15
+profile_resolution_ms: 1000

@@ -1,0 +1,7 @@
+scenario: trace
+rho: 0.6
+n_requests: 2000
+trace_path: data/traces/azure_counts.csv
+trace_count_column: invocations
+trace_timestamp_column: timestamp
+trace_interval_ms: 60000

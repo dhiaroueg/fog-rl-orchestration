@@ -14,6 +14,8 @@ Les constantes de normalisation sont des valeurs de depart. Elles devront
 etre revisees avec les mesures de calibration des VM.
 """
 
+from __future__ import annotations
+
 from dataclasses import dataclass
 from typing import Optional, Sequence
 

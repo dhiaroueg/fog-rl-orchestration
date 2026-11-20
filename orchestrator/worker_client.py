@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import time
 from typing import Any
 
 import httpx
@@ -27,7 +28,10 @@ class WorkerClient:
 
     async def get_state(self, node: WorkerNode) -> dict[str, Any]:
         """Appelle GET /state et retourne l'état JSON du worker."""
-        return await self._request_json(node, "GET", "/state")
+        started = time.perf_counter()
+        state = await self._request_json(node, "GET", "/state")
+        state["net_rtt_ms"] = (time.perf_counter() - started) * 1000.0
+        return state
 
     async def process(
         self,

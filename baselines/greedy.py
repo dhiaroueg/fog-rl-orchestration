@@ -51,12 +51,16 @@ class GreedyPolicy(Policy):
         request: Mapping[str, Any],
         states: Mapping[str, Mapping[str, Any]],
         workers: Mapping[str, Any],
+        *,
+        observation=None,
+        action_mask=None,
     ) -> list[str]:
         """Classe les workers réels selon leur temps de fin estimé.
 
         Cette méthode partage le contrat de l'orchestrateur, tout en gardant
         ``select`` compatible avec l'environnement jouet à deux nœuds.
         """
+        del observation, action_mask
         work_ms = float(request["work_ms"])
         if work_ms < 0:
             raise ValueError("work_ms ne peut pas être négatif")

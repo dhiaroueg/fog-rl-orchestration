@@ -31,7 +31,42 @@ def generate_arrivals(cfg: TrafficConfig, seed: int) -> pd.DataFrame:
     )
 
     # 1. QUAND : instants d'arrivée
-    t = process(rng_t, arrival_rate(cfg), cfg.n_requests, cfg.duration_ms)
+    lam = arrival_rate(cfg)
+    process_options = {
+        "peaks": {
+            "low_mean_ms": cfg.peak_low_mean_ms,
+            "high_mean_ms": cfg.peak_high_mean_ms,
+            "low_multiplier": cfg.peak_low_multiplier,
+            "high_multiplier": cfg.peak_high_multiplier,
+        },
+        "diurnal": {
+            "period_ms": cfg.diurnal_period_ms,
+            "amplitude": cfg.diurnal_amplitude,
+            "peak_phase": cfg.diurnal_peak_phase,
+            "resolution_ms": cfg.profile_resolution_ms,
+        },
+        "flash_crowd": {
+            "peak_multiplier": cfg.flash_peak_multiplier,
+            "start_fraction": cfg.flash_start_fraction,
+            "ramp_up_fraction": cfg.flash_ramp_up_fraction,
+            "plateau_fraction": cfg.flash_plateau_fraction,
+            "ramp_down_fraction": cfg.flash_ramp_down_fraction,
+            "resolution_ms": cfg.profile_resolution_ms,
+        },
+        "trace": {
+            "trace_path": cfg.trace_path,
+            "trace_count_column": cfg.trace_count_column,
+            "trace_timestamp_column": cfg.trace_timestamp_column,
+            "trace_interval_ms": cfg.trace_interval_ms,
+        },
+    }
+    t = process(
+        rng_t,
+        lam,
+        cfg.n_requests,
+        cfg.duration_ms,
+        **process_options.get(cfg.scenario, {}),
+    )
     n = len(t)
 
     # 2. QUOI : type, travail, échéance
@@ -66,15 +101,14 @@ def generate_arrivals(cfg: TrafficConfig, seed: int) -> pd.DataFrame:
 
 
 if __name__ == "__main__":
-    cfg = TrafficConfig(rho=0.6, n_requests=5000)
+    cfg = TrafficConfig(rho=0.6, n_requests=5000, scenario="constant")
     df = generate_arrivals(cfg, seed=1000)
 
     print("Travail moyen :", mean_work_ms(cfg), "ms")
-    print("Débit visé    :", arrival_rate(cfg) * 1000, "req/s")
+    print("Débit moyen visé :", arrival_rate(cfg) * 1000, "req/s")
     print(df.head(10))
     # print("Nombre total de requêtes :", len(df))
     # print(df)
-
 
     horizon = df["t_arrival_ms"].iloc[-1]
     print("rho observé   :", round(df["work_ms"].sum() / (horizon * cfg.capacity), 3))
