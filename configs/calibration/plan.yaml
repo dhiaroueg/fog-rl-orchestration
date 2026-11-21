@@ -1,0 +1,14 @@
+# Plan de calibration (python -m fogrl.calibration.measure --plan configs/calibration/plan.yaml --out data/calibration/<date>).
+# Les workers doivent tourner sur leurs VM, SANS l'orchestrateur ni de charge en parallele.
+# URLs : remplacez vm1/vm2/vm3 par les adresses des VM (ports de configs/nodes/pool6.yaml).
+workers:
+  fogA: http://vm1:8001
+  fogB: http://vm2:8002
+  fogC: http://vm3:8003
+  cloud: http://vm3:8006
+requests_file: configs/requests.yaml
+req_types: [light, medium, heavy]
+levels: auto            # concurrence 1 .. servers + 1 : charge a l'arrivee de 0 a 1
+samples_per_level: 30   # >= 5 exige par fit.py ; 30 donne un cv exploitable
+warmup_requests: 5
+rtt_samples: 100

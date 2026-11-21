@@ -1,0 +1,17 @@
+# Niveau N3 : randomisation de domaine et tailles variables (3, 4 ou 6 noeuds).
+# Disposition "padded" : 6 emplacements (30 valeurs), noeuds absents masques.
+# La trace "azure" est volontairement absente : elle sert au test de
+# generalisation (H3) sur un trafic jamais vu a l'entrainement.
+nodes_file: configs/nodes/pool6.yaml
+configuration: [n3, n4, n6]
+layout: padded
+scenarios: [low, medium, high, spikes, diurnal, flash_crowd]
+episode_requests: 2000
+normalization: {arrival_rate_rps: 200}
+reward: {w1: 1.0, w2: 0.5, w3: 0.3, w4: 2.0, w5: 5.0}
+randomization:
+  enabled: true
+  service_scale: [0.8, 1.2]     # temps de service +-20 %
+  rtt_scale: [0.7, 1.3]         # latence +-30 %
+  rate_scale: [0.8, 1.2]
+  battery_initial: [0.6, 1.0]

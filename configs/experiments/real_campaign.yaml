@@ -1,0 +1,22 @@
+# Campagne sur le prototype deploye (Phase 4) : python -m fogrl.loadgen.campaign --matrix configs/experiments/real_campaign.yaml --out results/real_campaign
+# Duree : 8 politiques x 4 scenarios x 3 graines x (duration_s + cooldown_s) = 96 runs de ~63 s, soit ~1 h 40.
+# Les modeles RL absents font echouer la campagne au chargement de la politique : entrainez-les d'abord (make train-n3).
+# Le CSV produit a les memes colonnes que celui du simulateur : make compare (jalon G4).
+name: real_campaign
+orchestrator_url: http://localhost:9000
+env: configs/env/eval.yaml
+configuration: n4
+scenarios: [low, medium, high, spikes]
+seeds: [1000, 1001, 1002]
+duration_s: 60
+cooldown_s: 3
+max_in_flight: 1000
+policies:
+  - {name: random, type: baseline}
+  - {name: round_robin, type: baseline}
+  - {name: least_connections, type: baseline}
+  - {name: static_threshold, type: baseline}
+  - {name: greedy, type: baseline}
+  - {name: dqn, type: rl, model: models/n3/dqn/seed0, train_seed: 0}
+  - {name: ppo, type: rl, model: models/n3/ppo/seed0, train_seed: 0}
+  - {name: a2c, type: rl, model: models/n3/a2c/seed0, train_seed: 0}

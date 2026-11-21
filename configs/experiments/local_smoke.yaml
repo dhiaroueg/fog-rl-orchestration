@@ -1,0 +1,13 @@
+# Essai rapide du prototype sans Docker : python scripts/local_stack.py --campaign configs/experiments/local_smoke.yaml
+# Charge tres faible (scenario smoke) : tient sur un poste a 2 coeurs. NE PAS utiliser pour les resultats du memoire.
+name: local_smoke
+env: configs/env/eval.yaml
+configuration: n4
+scenarios: [smoke]
+seeds: [1000, 1001]
+duration_s: 12
+cooldown_s: 1
+policies:
+  - {name: round_robin, type: baseline}
+  - {name: least_connections, type: baseline}
+  - {name: greedy, type: baseline}

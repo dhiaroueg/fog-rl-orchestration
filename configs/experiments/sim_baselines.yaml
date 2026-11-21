@@ -1,0 +1,13 @@
+# Les 5 baselines seules (rapide) : tableau des baselines par scenario (livrable Phase 2).
+name: sim_baselines
+env: configs/env/eval.yaml
+seeds: [1000, 1001, 1002, 1003, 1004]
+n_requests: 5000
+scenarios: [low, medium, high, spikes, flash_crowd, azure]
+sizes: [3, 4, 6]
+policies:
+  - {name: random, type: baseline}
+  - {name: round_robin, type: baseline}
+  - {name: least_connections, type: baseline}
+  - {name: static_threshold, type: baseline}
+  - {name: greedy, type: baseline}

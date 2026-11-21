@@ -1,0 +1,9 @@
+# Evaluation : 5000 requetes, sans randomisation. configuration, scenarios et
+# graine sont fixes par la matrice d'experiences (configs/experiments/*.yaml).
+nodes_file: configs/nodes/pool6.yaml
+configuration: n4
+layout: padded
+scenarios: [medium]
+episode_requests: 5000
+normalization: {arrival_rate_rps: 200}
+reward: {w1: 1.0, w2: 0.5, w3: 0.3, w4: 2.0, w5: 5.0}

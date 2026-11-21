@@ -1,0 +1,24 @@
+# Orchestrateur, generateur de charge, calibration, entrainement et evaluation (image complete).
+#   docker build -f docker/Dockerfile.fogrl -t fogrl:latest .
+FROM python:3.13-slim
+
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PIP_NO_CACHE_DIR=1 \
+    PIP_DISABLE_PIP_VERSION_CHECK=1
+
+WORKDIR /app
+
+# torch CPU d'abord (la roue PyPI par defaut embarque CUDA, ~2,5 Go) ; requirements.txt le trouvera deja installe.
+COPY requirements.txt requirements-infra.txt ./
+RUN pip install --index-url https://download.pytorch.org/whl/cpu torch==2.14.1 \
+    && pip install -r requirements.txt -r requirements-infra.txt
+
+COPY pyproject.toml README.md ./
+COPY fogrl ./fogrl
+COPY configs ./configs
+COPY data ./data
+RUN pip install --no-deps .
+
+EXPOSE 9000
+CMD ["python", "-m", "fogrl.orchestrator.app"]

@@ -1,0 +1,22 @@
+# Etude d'ablation des poids de la recompense (un poids change a la fois ; les
+# autres gardent la valeur de configs/env/n2.yaml). Un PPO par variation.
+train_config: configs/train/n2.yaml
+algo: ppo
+train_seed: 0
+timesteps: 200000
+eval:
+  env: configs/env/eval.yaml
+  configuration: n4
+  scenarios: [medium, spikes]
+  seeds: [1000, 1001, 1002]
+  n_requests: 3000
+variations:
+  - {w2: 0.0}      # sans energie
+  - {w2: 0.25}
+  - {w2: 0.5}      # valeur initiale
+  - {w2: 1.0}
+  - {w2: 2.0}
+  - {w3: 0.0}      # sans cout
+  - {w3: 0.6}
+  - {w4: 1.0}      # echeance moins penalisee
+  - {w4: 4.0}

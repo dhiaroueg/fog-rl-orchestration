@@ -1,0 +1,30 @@
+# Worker (noeud fog ou cloud) : image legere, sans torch ni gymnasium.
+#   docker build -f docker/Dockerfile.worker -t fogrl-worker:latest .
+FROM python:3.13-slim
+
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PIP_NO_CACHE_DIR=1 \
+    PIP_DISABLE_PIP_VERSION_CHECK=1
+
+# iproute2 : commande `tc` (netem) pour injecter la latence reseau.
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends iproute2 \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+COPY requirements-worker.txt ./
+RUN pip install -r requirements-worker.txt
+
+COPY pyproject.toml README.md ./
+COPY fogrl ./fogrl
+COPY configs ./configs
+RUN pip install --no-deps .
+
+COPY docker/entrypoint-worker.sh /usr/local/bin/entrypoint-worker.sh
+# Le bit executable est perdu quand le fichier a ete commite depuis Windows : on ne s'y fie pas.
+RUN chmod +x /usr/local/bin/entrypoint-worker.sh
+
+EXPOSE 8000
+ENTRYPOINT ["/usr/local/bin/entrypoint-worker.sh"]
+CMD ["python", "-m", "fogrl.worker.app"]
