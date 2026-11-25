@@ -64,17 +64,18 @@ iperf3 -s                       # sur vm1 ; iperf3 -c <ip vm1> sur les autres : 
 
 ```bash
 python scripts/gen_compose.py --hosts vm1=192.168.1.11,vm2=192.168.1.12,vm3=192.168.1.13 \
-                              --vm-cpus vm1=2,vm2=4,vm3=8 [--control-vm vm3] [--configuration n6] [--worker-mode real]
+                              --control-vm vm3 --vm-cpus vm1=2,vm2=4,vm3=8 [--configuration n6] [--worker-mode real]
 bash scripts/deploy.sh build           # images fogrl-worker et fogrl (à faire sur chaque VM concernée)
 bash scripts/deploy.sh vm1 up          # sur vm1 ; idem vm2 sur vm2, vm3 sur vm3
 bash scripts/deploy.sh control up      # sur la VM de contrôle : orchestrateur, Prometheus, Grafana
 ```
 
 - Les fichiers de `deploy/` sont **générés** et ignorés par Git : régénérez-les sur chaque VM avec la même commande.
-- `--control-vm` choisit la VM de l'orchestrateur (le CDC conseille le PC le plus puissant, avec le cloud).
+- `--control-vm` choisit la VM de l'orchestrateur (par défaut vm3, qui héberge aussi cloud).
 - `--vm-cpus` déclenche un avertissement si les limites des profils dépassent les cœurs de la VM : en `n4`, vm3 héberge fogC (2 CPU) et
-  le cloud (4 CPU) et demande donc **6 vCPU**. Un nœud sans ses ressources fausse la mesure ; réduisez `cpus`/`servers` du cloud
-  dans `configs/nodes/pool6.yaml` (puis recalibrez) plutôt que de l'ignorer.
+  fogA + fogB demandent 1,5 CPU à vm1, fogC 2 CPU à vm2 et cloud 4 CPU à vm3. Prévoyez aussi de la marge sur vm3 pour l'orchestrateur,
+  Prometheus et Grafana. Un nœud sans ses ressources fausse la mesure ; réduisez `cpus`/`servers` dans `configs/nodes/pool6.yaml`
+  (puis recalibrez) plutôt que d'ignorer l'avertissement.
 - `--worker-mode real` : vrais calculs, inférence ONNX pour la requête lourde. Créez d'abord le modèle (`scripts/export_mobilenet_onnx.py`,
   non exécuté dans l'environnement de développement) dans `models_onnx/`.
 - Politique de départ : `--policy least_connections` (ou `rl:models/n3/ppo/seed0` avec le dossier `models/` présent sur la VM de contrôle).

@@ -89,10 +89,11 @@ cAdvisor et node-exporter (CDC §5.4) ne sont **pas** inclus : les métriques de
 | Docker Compose, une machine | `python scripts/gen_compose.py` puis `bash scripts/deploy.sh local up` | démonstration complète avec Prometheus et Grafana ; limites cgroups et `tc netem` |
 | 3 VM | `python scripts/gen_compose.py --hosts vm1=IP1,vm2=IP2,vm3=IP3` puis `bash scripts/deploy.sh vm1\|vm2\|vm3\|control up` | cible du CDC ; voir [`runbook.md`](runbook.md) |
 
-Répartition des nœuds par VM (colonne `vm` de `configs/nodes/pool6.yaml`) : vm1 = fogA (+ fogD), vm2 = fogB (+ fogE), vm3 = fogC et
-cloud. L'orchestrateur, Prometheus, Grafana et le générateur de charge tournent sur la VM de contrôle (`compose.control.yml`).
-Les limites `cpus` des profils s'additionnent : la configuration `n4` demande 6 vCPU à vm3 (fogC 2 + cloud 4) ; le générateur
-affiche un avertissement si une VM en a moins (`--vm-cpus vm3=4`).
+Répartition des nœuds par VM (colonne `vm` de `configs/nodes/pool6.yaml`) : vm1 = fogA + fogB (+ fogD en n6), vm2 = fogC
+(+ fogE en n6), vm3 = cloud. L'orchestrateur, Prometheus, Grafana et le générateur de charge tournent sur la VM de contrôle ;
+par défaut, il s'agit de vm3 (`compose.control.yml`). Les limites `cpus` des profils s'additionnent : en n4, vm1 demande
+1,5 vCPU, vm2 demande 2 vCPU et vm3 demande 4 vCPU pour cloud, auxquels il faut ajouter les ressources du contrôle. Le générateur
+affiche un avertissement si les limites des workers dépassent la capacité indiquée (`--vm-cpus`).
 
 ## 6. Fidélité simulation / réel
 

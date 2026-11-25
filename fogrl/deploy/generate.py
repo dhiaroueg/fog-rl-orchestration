@@ -39,7 +39,7 @@ class DeployOptions:
     nodes_file: str = "configs/nodes/pool6.yaml"
     configuration: str = "n4"
     hosts: Mapping[str, str] = field(default_factory=lambda: {"vm1": "vm1", "vm2": "vm2", "vm3": "vm3"})
-    control_vm: str = "vm1"
+    control_vm: str = "vm3"
     worker_image: str = "fogrl-worker:latest"
     fogrl_image: str = "fogrl:latest"
     worker_mode: str = "burn"  # burn | real
@@ -61,6 +61,8 @@ def load_profiles(opts: DeployOptions) -> list[NodeProfile]:
     unknown_vms = sorted({p.vm for p in chosen} - set(opts.hosts))
     if unknown_vms:
         raise ValueError(f"VM sans adresse : {unknown_vms} (option --hosts, ex. vm1=192.168.56.11)")
+    if opts.control_vm not in opts.hosts:
+        raise ValueError(f"VM de contrôle sans adresse : {opts.control_vm!r}")
     return chosen
 
 
@@ -68,9 +70,10 @@ def host_name(profile: NodeProfile) -> str:
     return profile.node_id.lower()
 
 
-def worker_url(profile: NodeProfile, opts: DeployOptions, local: bool) -> str:
-    host = host_name(profile) if local else opts.hosts[profile.vm]
-    return f"http://{host}:{profile.port}"
+def control_host(profile: NodeProfile, opts: DeployOptions) -> str:
+    if profile.vm == opts.control_vm:
+        return host_name(profile)
+    return opts.hosts[profile.vm]
 
 
 def worker_service(profile: NodeProfile, opts: DeployOptions) -> dict:
@@ -189,7 +192,7 @@ def build_compose(opts: DeployOptions) -> dict[str, dict]:
     files["compose.local.yml"] = _compose(local_services, ["prometheus-data", "grafana-data"])
     for vm in sorted({p.vm for p in profiles}):
         files[f"compose.{vm}.yml"] = _compose({host_name(p): worker_service(p, opts) for p in profiles if p.vm == vm})
-    urls = {p.node_id: worker_url(p, opts, local=False) for p in profiles}
+    urls = {p.node_id: f"http://{control_host(p, opts)}:{p.port}" for p in profiles}
     files["compose.control.yml"] = _compose(orchestrator_services(opts, urls), ["prometheus-data", "grafana-data"])
     return files
 
@@ -197,7 +200,10 @@ def build_compose(opts: DeployOptions) -> dict[str, dict]:
 def build_prometheus(opts: DeployOptions, local: bool) -> dict:
     profiles = load_profiles(opts)
     orchestrator = f"orchestrator:{opts.orchestrator_port}"
-    workers = [f"{host_name(p)}:{p.port}" if local else f"{opts.hosts[p.vm]}:{p.port}" for p in profiles]
+    workers = [
+        f"{host_name(p)}:{p.port}" if local else f"{control_host(p, opts)}:{p.port}"
+        for p in profiles
+    ]
     return {
         "global": {"scrape_interval": "5s", "evaluation_interval": "15s"},
         "scrape_configs": [
@@ -281,7 +287,7 @@ def main(argv: Optional[Sequence[str]] = None) -> None:
     parser.add_argument("--nodes-file", default="configs/nodes/pool6.yaml")
     parser.add_argument("--configuration", default="n4", help="n3, n4 ou n6")
     parser.add_argument("--hosts", default="", help="vm1=10.0.0.1,vm2=10.0.0.2,vm3=10.0.0.3 (defaut : vm1,vm2,vm3)")
-    parser.add_argument("--control-vm", default="vm1")
+    parser.add_argument("--control-vm", default="vm3")
     parser.add_argument("--worker-mode", choices=("burn", "real"), default="burn")
     parser.add_argument("--emulate-speed", action="store_true", help="pas de limites CPU : heterogeneite emulee par l'application")
     parser.add_argument("--policy", default="least_connections")

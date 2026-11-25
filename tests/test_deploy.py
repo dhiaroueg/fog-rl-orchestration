@@ -48,12 +48,13 @@ def test_one_compose_file_per_vm_with_the_workers_of_the_pool_assignment():
         assert set(files[f"compose.{vm}.yml"]["services"]) == expected
     assert set(files["compose.local.yml"]["services"]) >= {p.lower() for p in POOL} | {"orchestrator", "prometheus", "grafana"}
     n4 = build_compose(opts(configuration="n4"))
-    assert set(n4["compose.vm1.yml"]["services"]) == {"foga"}  # fogD absent de la configuration n4
+    assert set(n4["compose.vm1.yml"]["services"]) == {"foga", "fogb"}  # fogD absent de la configuration n4
 
 
 def test_workers_get_their_profile_limits_latency_and_ports():
-    services = build_compose(opts())["compose.vm3.yml"]["services"]
-    fog_c, cloud = services["fogc"], services["cloud"]
+    files = build_compose(opts())
+    fog_c = files["compose.vm2.yml"]["services"]["fogc"]
+    cloud = files["compose.vm3.yml"]["services"]["cloud"]
     for service, profile in ((fog_c, POOL["fogC"]), (cloud, POOL["cloud"])):
         env = service["environment"]
         assert env["NODE_ID"] == profile.node_id and env["PORT"] == str(profile.port)
@@ -77,7 +78,12 @@ def test_control_compose_points_the_orchestrator_at_the_vm_addresses():
     control = build_compose(opts(policy="greedy"))["compose.control.yml"]["services"]
     env = control["orchestrator"]["environment"]
     urls = dict(item.split("=", 1) for item in env["ORCH_NODE_URLS"].split(","))
-    assert urls == {n: f"http://{HOSTS[POOL[n].vm]}:{POOL[n].port}" for n in ("fogA", "fogB", "fogC", "cloud")}
+    assert urls == {
+        "fogA": f"http://{HOSTS['vm1']}:8001",
+        "fogB": f"http://{HOSTS['vm1']}:8002",
+        "fogC": f"http://{HOSTS['vm2']}:8003",
+        "cloud": "http://cloud:8006",
+    }
     assert env["ORCH_POLICY"] == "greedy" and env["ORCH_CONFIGURATION"] == "n4"
     assert set(control) == {"orchestrator", "loadgen", "prometheus", "grafana"}
     assert control["loadgen"]["profiles"] == ["tools"]
@@ -102,7 +108,12 @@ def test_prometheus_scrapes_the_orchestrator_and_every_worker():
     jobs = {job["job_name"]: job for job in config["scrape_configs"]}
     assert jobs["orchestrator"]["static_configs"][0]["targets"] == ["orchestrator:9000"]
     targets = {t["labels"]["node"]: t["targets"][0] for t in jobs["workers"]["static_configs"]}
-    assert targets == {n: f"{HOSTS[POOL[n].vm]}:{POOL[n].port}" for n in ("fogA", "fogB", "fogC", "cloud")}
+    assert targets == {
+        "fogA": f"{HOSTS['vm1']}:8001",
+        "fogB": f"{HOSTS['vm1']}:8002",
+        "fogC": f"{HOSTS['vm2']}:8003",
+        "cloud": "cloud:8006",
+    }
     local = build_prometheus(opts(), local=True)
     assert {t["targets"][0] for t in local["scrape_configs"][1]["static_configs"]} == {
         f"{n.lower()}:{POOL[n].port}" for n in ("fogA", "fogB", "fogC", "cloud")
@@ -114,11 +125,16 @@ def test_invalid_deployments_are_refused_and_resources_checked():
         load_profiles(opts(configuration="n9"))
     with pytest.raises(ValueError, match="VM sans adresse"):
         load_profiles(DeployOptions(hosts={"vm1": "a", "vm2": "b"}))
+    with pytest.raises(ValueError, match="VM de contrôle sans adresse"):
+        load_profiles(opts(control_vm="vm4"))
     summary = resource_summary(opts())
-    assert summary["vm3"]["cpus"] == POOL["fogC"].cpus + POOL["cloud"].cpus and summary["vm3"]["nodes"] == ["fogC", "cloud"]
-    warnings_ = resource_warnings(opts(vm_cpus={"vm1": 2, "vm3": 4}))
-    assert len(warnings_) == 1 and "vm3" in warnings_[0] and "recalibrez" in warnings_[0]
-    assert resource_warnings(opts(vm_cpus={"vm1": 2, "vm3": 8})) == []
+    assert summary["vm1"]["cpus"] == POOL["fogA"].cpus + POOL["fogB"].cpus
+    assert summary["vm1"]["nodes"] == ["fogA", "fogB"]
+    assert summary["vm2"]["cpus"] == POOL["fogC"].cpus and summary["vm2"]["nodes"] == ["fogC"]
+    assert summary["vm3"]["cpus"] == POOL["cloud"].cpus and summary["vm3"]["nodes"] == ["cloud"]
+    warnings_ = resource_warnings(opts(vm_cpus={"vm1": 1, "vm2": 1, "vm3": 3}))
+    assert len(warnings_) == 3
+    assert resource_warnings(opts(vm_cpus={"vm1": 2, "vm2": 2, "vm3": 4})) == []
 
 
 def test_write_all_produces_lf_header_marked_valid_files(tmp_path):
