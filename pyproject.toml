@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fogrl"
+version = "0.1.0"
+description = "Orchestration de taches en fog computing par apprentissage par renforcement (DQN, PPO, A2C)"
+readme = "README.md"
+requires-python = ">=3.11"
+# Les dependances sont epinglees dans requirements*.txt (voir README).
+
+[tool.setuptools.packages.find]
+include = ["fogrl*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
+markers = [
+    "slow: tests lents (entrainement RL, pile de processus reels ; plusieurs dizaines de secondes)",
+]
+filterwarnings = [
+    "ignore::DeprecationWarning",
+]

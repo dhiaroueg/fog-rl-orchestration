@@ -1,0 +1,13 @@
+# Niveau N0 : test de coherence (cahier, Phase 2 etape 9).
+# 2 noeuds (un lent fogA, un rapide fogC), latence seule, meme RTT pour isoler
+# la vitesse. Un PPO doit apprendre a privilegier le noeud rapide.
+nodes_file: configs/nodes/pool6.yaml
+configuration: n2
+layout: compact
+scenarios: [low]
+episode_requests: 2000
+node_overrides:
+  fogA: {rtt_ms: 20, battery: null}
+  fogC: {rtt_ms: 20}
+normalization: {arrival_rate_rps: 200}
+reward: {w1: 1.0, w2: 0.0, w3: 0.0, w4: 0.0, w5: 5.0}

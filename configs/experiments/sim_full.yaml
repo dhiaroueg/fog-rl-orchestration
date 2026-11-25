@@ -1,0 +1,19 @@
+# Matrice complete (cahier, Phase 4) : 8 politiques x 6 scenarios x 3 tailles x 5 graines.
+# Les modeles RL absents sont ignores avec un avertissement (on peut donc
+# lancer la matrice avant la fin de l'entrainement).
+# Duree indicative sur 4 coeurs : ~15 min avec --n-jobs 4.
+name: sim_full
+env: configs/env/eval.yaml
+seeds: [1000, 1001, 1002, 1003, 1004]
+n_requests: 5000
+scenarios: [low, medium, high, spikes, flash_crowd, azure]   # azure = trace jamais vue (H3)
+sizes: [3, 4, 6]
+policies:
+  - {name: random, type: baseline}
+  - {name: round_robin, type: baseline}
+  - {name: least_connections, type: baseline}
+  - {name: static_threshold, type: baseline}
+  - {name: greedy, type: baseline}
+  - {name: dqn, type: rl, model_glob: "models/n3/dqn/seed*"}
+  - {name: ppo, type: rl, model_glob: "models/n3/ppo/seed*"}
+  - {name: a2c, type: rl, model_glob: "models/n3/a2c/seed*"}

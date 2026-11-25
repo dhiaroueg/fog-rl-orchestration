@@ -1,0 +1,14 @@
+# Configuration de l'orchestrateur deploye (surchargeable par ORCH_POLICY, ORCH_CONFIGURATION,
+# ORCH_NODE_URLS, DECISION_LOG : voir fogrl/orchestrator/settings.py).
+# Les profils des noeuds, les echeances, la normalisation et la recompense viennent de env_file :
+# simulation et prototype lisent les memes valeurs.
+env_file: configs/env/eval.yaml
+configuration: n4
+policy: least_connections      # ou greedy, ..., rl:models/n3/ppo/seed0 (aussi modifiable a chaud : POST /policy)
+decision_budget_ms: 20         # EF-07 : au-dela, repli sur least-connections
+poll_timeout_ms: 400
+request_timeout_s: 10
+failure_threshold: 2           # echecs consecutifs avant de declarer un noeud indisponible
+policy_failure_threshold: 20   # echecs consecutifs de la politique avant de la suspendre
+policy_cooldown_s: 5
+warmup_decisions: 5

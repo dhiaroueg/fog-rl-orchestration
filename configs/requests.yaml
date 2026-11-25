@@ -1,0 +1,19 @@
+# Types de requetes (cahier des charges, section 6.1).
+# work_ms : travail nominal (a la vitesse 1.0), deadline_ms : echeance,
+# weight : part dans le melange, work_cv : variabilite de la taille.
+requests:
+  light:                 # agregation de capteurs
+    work_ms: 5
+    deadline_ms: 100
+    weight: 0.6
+    work_cv: 0.2
+  medium:                # traitement d'image
+    work_ms: 40
+    deadline_ms: 300
+    weight: 0.3
+    work_cv: 0.2
+  heavy:                 # inference ONNX MobileNetV2
+    work_ms: 150
+    deadline_ms: 1000
+    weight: 0.1
+    work_cv: 0.2

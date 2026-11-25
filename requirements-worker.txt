@@ -1,0 +1,7 @@
+# Image du worker (docker/Dockerfile.worker) : pas de torch, pas de gymnasium.
+fastapi==0.143.1
+numpy==2.5.4
+onnxruntime==1.29.0    # inference MobileNetV2 (WORKER_MODE=real) ; non teste dans le venv de developpement
+prometheus_client==0.26.0
+PyYAML==6.0.3
+uvicorn==0.54.0

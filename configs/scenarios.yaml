@@ -1,0 +1,41 @@
+# Scenarios de trafic (cahier des charges, sections 3.1 et 8.4).
+# load = fraction de la capacite theorique des noeuds FOG actifs (le cloud est
+# exclu) : load > 1.0 sature le fog et oblige a deborder vers le cloud.
+scenarios:
+  low:                   # charge faible, Poisson
+    type: poisson
+    load: 0.35
+  medium:                # charge moyenne, Poisson
+    type: poisson
+    load: 0.65
+  high:                  # charge elevee, Poisson
+    type: poisson
+    load: 0.95
+  spikes:                # pics : MMPP a 2 etats (debit moyen = load)
+    type: mmpp
+    load: 0.65
+    low_factor: 0.5
+    high_factor: 2.0
+    mean_low_s: 4.0
+    mean_high_s: 2.0
+  diurnal:               # sinusoide
+    type: diurnal
+    load: 0.65
+    amplitude: 0.5
+    period_s: 30.0
+  flash_crowd:           # rampe x5 puis retour au debit de base
+    type: flash_crowd
+    load: 0.5
+    factor: 5.0
+    start_s: 5.0
+    ramp_s: 3.0
+    hold_s: 6.0
+    decay_s: 3.0
+  azure:                 # rejeu d'une trace (Azure Functions 2019) remise a l'echelle
+    type: trace
+    load: 0.65
+    trace_file: data/traces/azure_sample_synthetic.csv
+    bin_s: 0.5           # duree simulee d'une minute de trace
+  smoke:                 # tres faible charge : essais locaux du prototype (scripts/local_stack.py, CI)
+    type: poisson
+    load: 0.1

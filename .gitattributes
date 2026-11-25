@@ -5,3 +5,10 @@
 # text : indique à Git qu'il s'agit de fichiers texte.
 # eol=lf : demande à Git d'utiliser des fins de ligne LF dans le dépôt et lors de l'extraction des fichiers.
 *.sh text eol=lf
+
+# Fichiers lus par Docker / le shell : toujours LF, quelle que soit la machine.
+Dockerfile* text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+Makefile text eol=lf

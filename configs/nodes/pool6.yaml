@@ -1,0 +1,108 @@
+# Profils de noeuds du prototype (HYPOTHESES DE MODELE, a reviser avec la
+# calibration des VM - cahier des charges, sections 3.3, 5.3 et 6.1).
+#
+# speed      : vitesse relative par serveur (1.0 = duree nominale des requetes)
+# servers    : requetes traitees en parallele
+# rtt_ms     : latence reseau aller-retour (injectee par tc netem sur les VM)
+# rtt_sigma  : gigue relative (ecart-type log-normal)
+# service_cv : variabilite residuelle du temps de service
+# contention : inflation du temps de service a pleine charge
+# p_idle_w / p_max_w : modele d'energie lineaire P = P_idle + (P_max - P_idle) * U_cpu
+# battery    : batterie virtuelle a recharge lente (fogA et fogB) ; fogC, fogD,
+#              fogE et le cloud sont alimentes sur secteur
+# cpus / mem_mb / vm / port : deploiement Docker (scripts/gen_compose.py)
+#
+# L'ordre des noeuds est l'ordre des actions de l'agent en disposition
+# "padded" : ne le changez pas apres un entrainement (voir contract.json).
+nodes:
+  - id: fogA            # profil proche d'un Raspberry Pi 4 (2,7 W / 6,4 W)
+    kind: fog
+    speed: 0.5
+    servers: 1
+    rtt_ms: 10
+    rtt_sigma: 0.15
+    p_idle_w: 2.7
+    p_max_w: 6.4
+    max_queue: 40
+    battery: {capacity_j: 120, recharge_w: 2.0}
+    cpus: 0.5
+    mem_mb: 512
+    vm: vm1
+    port: 8001
+
+  - id: fogB            # 5 W / 15 W
+    kind: fog
+    speed: 1.0
+    servers: 1
+    rtt_ms: 20
+    rtt_sigma: 0.15
+    p_idle_w: 5.0
+    p_max_w: 15.0
+    max_queue: 60
+    battery: {capacity_j: 400, recharge_w: 4.0}
+    cpus: 1.0
+    mem_mb: 1024
+    vm: vm2
+    port: 8002
+
+  - id: fogC            # 10 W / 35 W, le plus puissant des noeuds fog
+    kind: fog
+    speed: 1.0
+    servers: 2
+    rtt_ms: 30
+    rtt_sigma: 0.15
+    p_idle_w: 10.0
+    p_max_w: 35.0
+    max_queue: 100
+    cpus: 2.0
+    mem_mb: 2048
+    vm: vm3
+    port: 8003
+
+  - id: fogD            # configuration a 6 noeuds
+    kind: fog
+    speed: 0.75
+    servers: 1
+    rtt_ms: 25
+    rtt_sigma: 0.15
+    p_idle_w: 4.0
+    p_max_w: 12.0
+    max_queue: 50
+    cpus: 0.75
+    mem_mb: 768
+    vm: vm1
+    port: 8004
+
+  - id: fogE            # configuration a 6 noeuds
+    kind: fog
+    speed: 0.75
+    servers: 2
+    rtt_ms: 40
+    rtt_sigma: 0.15
+    p_idle_w: 8.0
+    p_max_w: 25.0
+    max_queue: 80
+    cpus: 1.5
+    mem_mb: 1536
+    vm: vm2
+    port: 8005
+
+  - id: cloud           # grande capacite, forte latence, cout par requete
+    kind: cloud
+    speed: 1.5
+    servers: 8
+    rtt_ms: 80
+    rtt_sigma: 0.2
+    cost_per_request: 1.0
+    max_queue: 10000
+    cpus: 4.0
+    mem_mb: 4096
+    vm: vm3
+    port: 8006
+
+# Configurations nommees (tailles 3, 4 et 6 du cahier, plus N0).
+configurations:
+  n2: [fogA, fogC]                                  # test de coherence N0 : un lent, un rapide
+  n3: [fogA, fogB, cloud]
+  n4: [fogA, fogB, fogC, cloud]                     # 22 valeurs en disposition compacte
+  n6: [fogA, fogB, fogC, fogD, fogE, cloud]

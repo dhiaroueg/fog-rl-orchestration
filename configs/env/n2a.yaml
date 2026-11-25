@@ -1,0 +1,8 @@
+# Niveau N2a : on ajoute l'energie a la recompense (un terme a la fois) et le trafic en pics.
+nodes_file: configs/nodes/pool6.yaml
+configuration: n4
+layout: compact
+scenarios: [medium, spikes]
+episode_requests: 2000
+normalization: {arrival_rate_rps: 200}
+reward: {w1: 1.0, w2: 0.5, w3: 0.0, w4: 2.0, w5: 5.0}

@@ -218,3 +218,22 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# --- Specifique au projet fog-rl-orchestration ---
+# Modeles, TensorBoard, resultats d'experiences et journaux : regenerables, jamais commites.
+models/
+runs/
+results/
+figures/
+logs/
+*.jsonl
+models_onnx/
+# Mesures brutes de calibration (conserver calibration.json et report.md dans configs/calibration/)
+data/calibration/
+# Traces Azure reelles (volumineuses) : telecharger avec scripts/download_azure_trace.sh
+data/traces/azure_functions_2019_*.csv
+.coverage
+# Fichiers de deploiement GENERES (adresses des VM propres a chaque installation) : make compose
+/deploy/
+# La regle Python standard 'env/' (plus haut) ignorerait configs/env/ : ces configurations DOIVENT etre versionnees.
+!configs/env/

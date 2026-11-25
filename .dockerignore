@@ -1,0 +1,16 @@
+.git
+.github
+**/__pycache__
+*.pyc
+.pytest_cache
+*.egg-info
+venv
+.venv
+models
+runs
+results
+logs
+deploy
+docs
+tests
+data/calibration
